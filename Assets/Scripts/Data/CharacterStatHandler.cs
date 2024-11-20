@@ -9,7 +9,7 @@ using UnityEngine;
 public class CharacterStatHandler : MonoBehaviour
 {
     [SerializeField] private CharacterStat playerBaseStat;
-    public CharacterStat PlayerCurrentStat;
+    [HideInInspector]public CharacterStat PlayerCurrentStat;
 
     private void Start()
     {
