@@ -12,6 +12,11 @@ public class CameraFollow : MonoBehaviour
     public Vector3 Offset;
     private Rigidbody2D cameraRb;
 
+    private void Awake()
+    {
+        transform.position = new Vector3(PlayerTrans.position.x, PlayerTrans.position.y, PlayerTrans.position.z-10f);
+        
+    }
     private void Start()
     {
         if (PlayerTrans != null)
