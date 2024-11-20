@@ -147,7 +147,10 @@ public class PlayerController : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext context) 
     {
-    
+        if (Physics2D.Raycast(transform.position, Vector3.right, 1f, GroundMask))
+        { 
+        
+        }
     }
 
     public void OnLadder(InputAction.CallbackContext context)
