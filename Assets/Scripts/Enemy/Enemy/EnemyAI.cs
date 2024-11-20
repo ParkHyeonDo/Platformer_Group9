@@ -9,6 +9,7 @@ public class EnemyAI : MonoBehaviour
     private Vector2 boxSize = Vector3.right;
     public LayerMask targetLayer; // 감지할 레이어
     private MonsterAnimationController animationController;
+    [SerializeField] private float rayMultiple;
 
 
     SpriteRenderer spriteRenderer;
@@ -42,7 +43,7 @@ public class EnemyAI : MonoBehaviour
     void DetectUnits()
     {
         Collider2D[] hitColliders = Physics2D.OverlapBoxAll(transform.position, boxSize, 0f, targetLayer);
-        Debug.DrawRay(transform.position, boxSize,Color.red);
+        //Debug.DrawRay(transform.position, boxSize,Color.red);
         Collider2D[] hitcolliders;
         if(spriteRenderer.flipX == true)
         {
@@ -57,7 +58,7 @@ public class EnemyAI : MonoBehaviour
     {
         // Gizmos를 사용하여 박스 범위를 시각적으로 표시
         Gizmos.color = Color.red; // 색상 설정
-        Gizmos.DrawWireCube(transform.position, boxSize); // 박스 그리기
+        Gizmos.DrawWireCube(transform.position, boxSize*rayMultiple); // 박스 그리기
     }
 
     void Think()
