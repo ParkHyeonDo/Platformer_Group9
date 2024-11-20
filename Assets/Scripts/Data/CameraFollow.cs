@@ -10,13 +10,13 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform PlayerTrans;
     public Vector3 Offset;
-    private Rigidbody2D cameraRb;
 
-    private void Awake()
-    {
-        transform.position = new Vector3(PlayerTrans.position.x, PlayerTrans.position.y, PlayerTrans.position.z-10f);
-        
-    }
+    public Collider2D MapBoundary;
+    private Bounds cameraBounds;
+
+    private float cameraHalfHeight;
+    private float cameraHalfWidth;
+
     private void Start()
     {
         if (PlayerTrans != null)
@@ -24,17 +24,26 @@ public class CameraFollow : MonoBehaviour
             Offset = transform.position - PlayerTrans.position;
         }
 
-        cameraRb = GetComponentInChildren<Rigidbody2D>();
+        Camera mainCamera = Camera.main;
+        cameraHalfHeight = mainCamera.orthographicSize;
+        cameraHalfWidth = cameraHalfHeight * mainCamera.aspect;
+
+        if (MapBoundary != null)
+        {
+            cameraBounds = MapBoundary.bounds;
+        }
     }
 
     private void LateUpdate()
     {
-        if (PlayerTrans != null && cameraRb != null)
+        if (PlayerTrans != null)
         {
             Vector3 targetPosition = PlayerTrans.position + Offset;
-            cameraRb.MovePosition(new Vector2(targetPosition.x, targetPosition.y));
+
+            targetPosition.x = Mathf.Clamp(targetPosition.x, cameraBounds.min.x + cameraHalfWidth, cameraBounds.max.x - cameraHalfWidth);
+            targetPosition.y = Mathf.Clamp(targetPosition.y, cameraBounds.min.y + cameraHalfHeight, cameraBounds.max.y - cameraHalfHeight);
+
+            transform.position = new Vector3(targetPosition.x, targetPosition.y, transform.position.z);
         }
     }
 }
-
-
