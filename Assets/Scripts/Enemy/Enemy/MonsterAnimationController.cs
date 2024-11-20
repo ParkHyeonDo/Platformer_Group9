@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class MonsterAnimationController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Animator animator;
+
+    private void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetWalking(bool isWalking)
     {
-        
+        animator.SetBool("IsWalking", isWalking);
     }
+
+    public void SetDead(bool isDead)
+    {
+        animator.SetBool("IsDead", isDead);
+    }
+
+    public void TriggerAttack()
+    {
+        animator.SetTrigger("AttackTrigger");
+
+    }
+    public void TriggerHit()
+    {
+        animator.SetTrigger("HitTrigger");
+    }
+    
 }

@@ -6,17 +6,26 @@ using UnityEngine.UIElements;
 public class EnemyAI : MonoBehaviour
 {
     Rigidbody2D rb;
-    Animator animator;
+    private Vector2 boxSize = Vector3.right;
+    public LayerMask targetLayer; // 감지할 레이어
+    private MonsterAnimationController animationController;
+
+
     SpriteRenderer spriteRenderer;
     public int nextMove;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        animationController = GetComponent<MonsterAnimationController>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         Invoke("Think", 3);
+    }
+
+    private void Update()
+    {
+        DetectUnits();
     }
     private void FixedUpdate()
     {
@@ -30,20 +39,32 @@ public class EnemyAI : MonoBehaviour
             Turn();
         }
     }
+    void DetectUnits()
+    {
+        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(transform.position, boxSize, 0f, targetLayer);
+        Debug.DrawRay(transform.position, boxSize,Color.red);
+        Collider2D[] hitcolliders;
+        if(spriteRenderer.flipX == true)
+        {
+            hitColliders = Physics2D.OverlapBoxAll(transform.position, boxSize, 0f, targetLayer);
+        }
+        else
+        {
+            hitColliders = Physics2D.OverlapBoxAll(transform.position, -boxSize, 0f, targetLayer);
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        // Gizmos를 사용하여 박스 범위를 시각적으로 표시
+        Gizmos.color = Color.red; // 색상 설정
+        Gizmos.DrawWireCube(transform.position, boxSize); // 박스 그리기
+    }
 
     void Think()
     {
         nextMove = Random.Range(-1, 2);
         Invoke("Think", 3);
-        if (nextMove != 0)
-        {
-            animator.SetBool("IsWalking", true);
-        }
-        else
-        {
-            animator.SetBool("IsWalking", false);
-        }
-        { }
+        
         if (nextMove != 0)
             spriteRenderer.flipX = nextMove == -1;
     }
