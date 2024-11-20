@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class StageManager : MonoBehaviour
 {
@@ -9,10 +10,11 @@ public class StageManager : MonoBehaviour
     private StageLoader _stageLoader;
     private int _curStageIdx = 0;
     public GameObject Player;
+    public CameraFollow CameraFollowScript;
 
     private void Start()
     {
-        _stageLoader = new StageLoader();
+        _stageLoader = GetComponent<StageLoader>();
         ChangeStage(_curStageIdx);
     }
 
@@ -23,9 +25,25 @@ public class StageManager : MonoBehaviour
             return;
         }
 
-        _stageLoader.LoadStage(Stages[curStageIdx].Prefab);
+        GameObject loadedStage = _stageLoader.LoadStage(Stages[curStageIdx].Prefab);
 
         Player.transform.position = Stages[curStageIdx].StartPosition;
+
+        if (CameraFollowScript != null)
+        {
+            CameraFollowScript.SetPlayer(Player.transform);
+
+            var collisionObject = loadedStage.transform.Find("Collision");
+            if (collisionObject != null)
+            {
+                var mapBoundary = collisionObject.GetComponent<TilemapCollider2D>();
+                if (mapBoundary != null)
+                {
+                    CameraFollowScript.SetMapBoundary(mapBoundary);
+                }
+            }
+        }
+        _curStageIdx = curStageIdx;
     }
 
     public void NextStage()
