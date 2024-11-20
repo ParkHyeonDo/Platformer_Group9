@@ -35,7 +35,6 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private LadderClimb ladderClimb;
 
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
