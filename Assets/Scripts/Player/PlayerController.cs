@@ -15,25 +15,32 @@ public class PlayerController : MonoBehaviour
     private bool isAttack;
     private bool isGround;
     private bool isLadder;
+    private bool isDash;
     private bool isHit;
 
+    [Header("애니메이션")]
     private string isMoveTr = "isMove";
     private string isJumpTr = "isJump";
     private string isAttackTr = "isAttack";
     private string isLadderTr = "isLadder";
+    private string isDashTr = "isDash";
     private int isMoveAnim;
     private int isJumpAnim;
     private int isAttackAnim;
     private int isLadderAnim;
+    private int isDashAnim;
 
     private float playerGravity;
+    private float weaponScale=1f;
     private Rigidbody2D rb;
     private SpriteRenderer playerRenderer;
-    public BoxCollider2D PlayerCollider;
+    public CapsuleCollider2D PlayerCollider;
     private Vector2 currentMove;
     private Vector2 targetVector;
     private Animator animator;
     private LadderClimb ladderClimb;
+    public Transform WeaponTransform;
+    private Transform vectorWeaponTransform;
 
     private void Awake()
     {
@@ -41,7 +48,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         playerRenderer = GetComponent<SpriteRenderer>();
         ladderClimb = GetComponent<LadderClimb>();
-        PlayerCollider = GetComponent<BoxCollider2D>();
+        PlayerCollider = GetComponent<CapsuleCollider2D>();
         playerStat = GetComponent<CharacterStatHandler>();
     }
     // Start is called before the first frame update
@@ -54,23 +61,24 @@ public class PlayerController : MonoBehaviour
         isJumpAnim = Animator.StringToHash(isJumpTr);
         isAttackAnim = Animator.StringToHash(isAttackTr);
         isLadderAnim = Animator.StringToHash(isLadderTr);
+        isDashAnim = Animator.StringToHash(isDashTr);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(transform.position + Vector3.down, Vector3.up*2f, Color.red);
+        Debug.DrawRay(transform.position + Vector3.down * 0.5f, Vector3.down*0.2f, Color.red);
         //Debug.DrawRay(transform.position, Vector3.up, Color.blue);
     }
 
     private void FixedUpdate()
     {
-        if (!isLadder)
+        if (!isLadder && !isDash )
         {
             Move();
             PlayerCollider.enabled = true;
         }
-        else 
+        else if(isLadder)
         {
             Ladder();
             PlayerCollider.enabled = false;
@@ -96,8 +104,16 @@ public class PlayerController : MonoBehaviour
         {
             if (!isAttack)
             {
-                if (currentMove.x < 0) playerRenderer.flipX = true;
-                else if (currentMove.x >= 0) playerRenderer.flipX = false;
+                if (currentMove.x < 0) 
+                {
+                    playerRenderer.flipX = true;
+                    WeaponFlip(true);
+                }
+                else if (currentMove.x >= 0)
+                {
+                    playerRenderer.flipX = false;
+                    WeaponFlip(false);
+                }
                 targetVector.x = currentMove.x * playerStat.PlayerCurrentStat.Speed ;
                 targetVector.y = rb.velocity.y;
                 rb.velocity = targetVector;
@@ -130,7 +146,10 @@ public class PlayerController : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext context) 
     {
-    
+        if (Physics2D.Raycast(transform.position, Vector3.right, 1f, GroundMask))
+        { 
+        
+        }
     }
 
     public void OnLadder(InputAction.CallbackContext context)
@@ -141,13 +160,7 @@ public class PlayerController : MonoBehaviour
             rb.gravityScale = 0;
             isLadder = true;
             currentMove = context.ReadValue<Vector2>();
-            /*if (context.ReadValue<Vector2>().y > 0 && !Physics2D.Raycast(transform.position, Vector3.up, 1f, LadderMask)) 
-            {
-                Debug.Log("언제 타 ?");
-                rb.gravityScale = playerGravity;
-                animator.SetBool(isLadderAnim, false);
-                isLadder = false;
-            }*/
+
         }
         else if (context.phase == InputActionPhase.Started || context.phase == InputActionPhase.Canceled && Physics2D.Raycast(transform.position, Vector3.down, 0.5f, LadderMask))
         {
@@ -171,6 +184,13 @@ public class PlayerController : MonoBehaviour
         targetVector.y = currentMove.y * playerStat.PlayerCurrentStat.Speed;
         rb.velocity = targetVector;
         animator.SetBool(isLadderAnim, true);
+        if (isLadder && !Physics2D.Raycast(transform.position + Vector3.down*0.5f, Vector3.down, 0.2f, LadderMask)) 
+        {
+            animator.speed = 1;
+            rb.gravityScale = playerGravity;
+            animator.SetBool(isLadderAnim, false);
+            isLadder = false;
+        }
     }
 
     public void OnAttack(InputAction.CallbackContext context) 
@@ -186,14 +206,12 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started)
         {
-            
-            playerStat.PlayerCurrentStat.Speed *= 2f;
-
-        }
-        else if (context.phase == InputActionPhase.Canceled) 
-        {
-            
-            playerStat.PlayerCurrentStat.Speed /= 2f;
+            isDash = true;
+            rb.gravityScale = 0;
+            rb.velocity = new Vector2(0, 0/*rb.velocity.y*/);
+            if (!playerRenderer.flipX)  rb.AddForce(Vector2.right * playerStat.PlayerCurrentStat.JumpForce*2f, ForceMode2D.Impulse);
+            else rb.AddForce(Vector2.left * playerStat.PlayerCurrentStat.JumpForce*2f, ForceMode2D.Impulse);
+            animator.SetBool(isDashAnim, true);
         }
     }
 
@@ -207,4 +225,24 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetBool(isJumpAnim, false);
     }
+
+    public void DashFinished() 
+    {
+        isDash = false;
+        rb.gravityScale = playerGravity;
+        animator.SetBool(isDashAnim, false);
+    }
+
+    private void WeaponFlip(bool leftVector) 
+    {
+        if (!leftVector)
+        {
+            WeaponTransform.localScale = Vector3.one * weaponScale;
+        }
+        else 
+        {
+            WeaponTransform.localScale = - Vector3.one * weaponScale;
+        }
+    }
+
 }
