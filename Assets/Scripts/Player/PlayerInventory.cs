@@ -28,7 +28,20 @@ public class PlayerInventory : MonoBehaviour
         UpdateInventoryUI();
     }
 
-    
+    public bool SpendGold(int amount)
+    {
+        if (gold >= amount)
+        {
+            gold -= amount;
+            return true; // 성공
+        }
+        return false; // 실패
+    }
+    public void AddGold(int amount)
+    {
+        gold += amount;
+    }
+
     public void UseItem(ItemData item)
     {
         if (item != null)
