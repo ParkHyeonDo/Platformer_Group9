@@ -15,6 +15,7 @@ MonoBehaviour:
   itemType: 1
   itemName: Bread
   description: HP+20
+  price: 20
   icon: {fileID: 21300000, guid: 1a58749f555f75e48baa41893215b26e, type: 3}
   item: {fileID: 4219132627378270748, guid: 5cf168463c661a54f8759371cc5d036d, type: 3}
   canStack: 1

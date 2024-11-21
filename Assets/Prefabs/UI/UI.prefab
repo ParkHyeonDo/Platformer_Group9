@@ -1216,7 +1216,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4174382477050857471}
-  - component: {fileID: 5861059446054123413}
   m_Layer: 0
   m_Name: ShopUI
   m_TagString: Untagged
@@ -1240,29 +1239,6 @@ Transform:
   - {fileID: 4739677637182300800}
   m_Father: {fileID: 6506511132386537572}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5861059446054123413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8924713241664256301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eb8a8885ab3c304399b97cb0d229fa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slots: []
-  ShopInventoryWindow: {fileID: 0}
-  slotPanel: {fileID: 0}
-  upgradeStatusText: {fileID: 0}
-  upgradeButton: {fileID: 0}
-  selectedItemName: {fileID: 0}
-  selectedItemDescription: {fileID: 0}
-  selectedItemprice: {fileID: 0}
-  BuyButton: {fileID: 0}
-  SellButton: {fileID: 0}
-  UpgradeButton: {fileID: 0}
 --- !u!1 &9028445450389476036
 GameObject:
   m_ObjectHideFlags: 0
@@ -1486,6 +1462,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6506511132386537572}
     m_Modifications:
+    - target: {fileID: 53039611369593783, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 53039611369593783, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 53039611369593783, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 53039611369593783, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921013905232145899, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921013905232145899, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921013905232145899, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 921013905232145899, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3702165177014282943, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1570,6 +1578,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5718784757942268232, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718784757942268232, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718784757942268232, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718784757942268232, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6401661489611483329, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6401661489611483329, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6401661489611483329, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6401661489611483329, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1588,6 +1628,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4790986150409450202}
     m_Modifications:
+    - target: {fileID: 4177431432455057781, guid: 298b12580988b884886e41a04bbf853d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1041754904, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
+    - target: {fileID: 4904991079373096805, guid: 298b12580988b884886e41a04bbf853d, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6721190499872970446, guid: 298b12580988b884886e41a04bbf853d, type: 3}
       propertyPath: m_Name
       value: Shop (3)
@@ -1713,7 +1761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
-  shopinventory: {fileID: 0}
+  shopinventory: {fileID: 4030736980099010803}
   index: 0
   equipped: 0
   quantity: 0
@@ -1725,6 +1773,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4790986150409450202}
     m_Modifications:
+    - target: {fileID: 4177431432455057781, guid: 298b12580988b884886e41a04bbf853d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 131449278, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
+    - target: {fileID: 4904991079373096805, guid: 298b12580988b884886e41a04bbf853d, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6721190499872970446, guid: 298b12580988b884886e41a04bbf853d, type: 3}
       propertyPath: m_Name
       value: Shop (4)
@@ -1845,7 +1901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
-  shopinventory: {fileID: 0}
+  shopinventory: {fileID: 4030736980099010803}
   index: 0
   equipped: 0
   quantity: 0
@@ -1862,6 +1918,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4790986150409450202}
     m_Modifications:
+    - target: {fileID: 4177431432455057781, guid: 298b12580988b884886e41a04bbf853d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -267587109, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
+    - target: {fileID: 4904991079373096805, guid: 298b12580988b884886e41a04bbf853d, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6721190499872970446, guid: 298b12580988b884886e41a04bbf853d, type: 3}
       propertyPath: m_Name
       value: Shop (2)
@@ -1982,7 +2046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
-  shopinventory: {fileID: 0}
+  shopinventory: {fileID: 4030736980099010803}
   index: 0
   equipped: 0
   quantity: 0
@@ -1999,6 +2063,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4790986150409450202}
     m_Modifications:
+    - target: {fileID: 4177431432455057781, guid: 298b12580988b884886e41a04bbf853d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 14e62563269c11443b9c936be93b95f4, type: 3}
+    - target: {fileID: 4904991079373096805, guid: 298b12580988b884886e41a04bbf853d, type: 3}
+      propertyPath: m_text
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6721190499872970446, guid: 298b12580988b884886e41a04bbf853d, type: 3}
       propertyPath: m_Name
       value: Shop
@@ -2124,7 +2196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
-  shopinventory: {fileID: 0}
+  shopinventory: {fileID: 4030736980099010803}
   index: 0
   equipped: 0
   quantity: 0
@@ -2136,6 +2208,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4790986150409450202}
     m_Modifications:
+    - target: {fileID: 4177431432455057781, guid: 298b12580988b884886e41a04bbf853d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1a58749f555f75e48baa41893215b26e, type: 3}
+    - target: {fileID: 4904991079373096805, guid: 298b12580988b884886e41a04bbf853d, type: 3}
+      propertyPath: m_text
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6721190499872970446, guid: 298b12580988b884886e41a04bbf853d, type: 3}
       propertyPath: m_Name
       value: Shop (1)
@@ -2261,7 +2341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
-  shopinventory: {fileID: 0}
+  shopinventory: {fileID: 4030736980099010803}
   index: 0
   equipped: 0
   quantity: 0
@@ -2376,6 +2456,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5255658335094133103, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4030736980099010803}
+    - targetCorrespondingSourceObject: {fileID: 5255658335094133103, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3083234851217211385}
   m_SourcePrefab: {fileID: 100100000, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}
 --- !u!1 &4200122628784494928 stripped
 GameObject:
@@ -2405,6 +2488,92 @@ MonoBehaviour:
   BuyButton: {fileID: 8787783290247975888}
   SellButton: {fileID: 4908701199312174478}
   UpgradeButton: {fileID: 4521602575785496976}
+  shopItems:
+  - {fileID: 11400000, guid: 44ddcd46abecc5b489ac3ce6db879d47, type: 2}
+  - {fileID: 11400000, guid: 87ae623afdd6c924a8f349453a58d74f, type: 2}
+  - {fileID: 11400000, guid: 7a13959775267614781ba1af33d0c2e9, type: 2}
+  - {fileID: 11400000, guid: e28aca293bcd18143a7816c90c0ea8ea, type: 2}
+  - {fileID: 11400000, guid: f09fc1e06eee72244a9f269a309a15f8, type: 2}
+--- !u!114 &3083234851217211385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4200122628784494928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4030736980099010803}
+        m_TargetAssemblyTypeName: ShopInventory, Assembly-CSharp
+        m_MethodName: OnUpgradeButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4030736980099010803}
+        m_TargetAssemblyTypeName: ShopInventory, Assembly-CSharp
+        m_MethodName: OnBuyButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4030736980099010803}
+        m_TargetAssemblyTypeName: ShopInventory, Assembly-CSharp
+        m_MethodName: OnSellButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &4739677637182300800 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3702165177014282943, guid: 958adfcc5fc7f16468476a4f1123c915, type: 3}

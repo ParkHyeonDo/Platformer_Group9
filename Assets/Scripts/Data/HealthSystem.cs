@@ -10,15 +10,20 @@ public class HealthSystem : MonoBehaviour , IDamagable
     private float checkDisableTime = float.MaxValue;
     private bool isHitted = false;
     private string playerTag = "Player";
+    CharacterStatHandler characterStatHandler;
 
     public event Action HitDisableEnd;
     public event Action Ondamage;
 
     private float maxHealth;
 
+    private void Awake()
+    {
+        characterStatHandler = GetComponent<CharacterStatHandler>();
+    }
     private void Start()
     {
-        maxHealth = GameManager.Instance.Player.Stat.CharacterCurrentStat.Health;
+        maxHealth = characterStatHandler.CharacterCurrentStat.Health;
     }
 
     private void Update()
@@ -36,13 +41,13 @@ public class HealthSystem : MonoBehaviour , IDamagable
     public bool TakeDamage(int Amount) 
     {
         if (checkDisableTime < HitDisableTime) return false;
-
+        
         checkDisableTime = 0;
-        GameManager.Instance.Player.Stat.CharacterCurrentStat.Health -= Amount;
-        GameManager.Instance.Player.Stat.CharacterCurrentStat.Health = (int)Mathf.Clamp(GameManager.Instance.Player.Stat.CharacterCurrentStat.Health, 0, maxHealth);
+        characterStatHandler.CharacterCurrentStat.Health -= Amount;
+        //characterStatHandler.CharacterCurrentStat.Health = (int)Mathf.Clamp(characterStatHandler.CharacterCurrentStat.Health, 0, maxHealth);
+        Debug.Log($"피격 후 대상 체력 : {characterStatHandler.CharacterCurrentStat.Health} / 받은 공격력 : {Amount}");
 
-
-        if (GameManager.Instance.Player.Stat.CharacterCurrentStat.Health <= 0)
+        if (characterStatHandler.CharacterCurrentStat.Health <= 0)
         {
             Die();
             return true;

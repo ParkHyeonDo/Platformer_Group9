@@ -13,9 +13,9 @@ public class PlayerStats : CharacterStatHandler
     public Action addItem;
 
 
-    private void Start()
+    private void Awake()
     {
-        base.Start();
+        base.Awake();
         currentHealth = maxHealth;
         CharacterCurrentStat.Health = maxHealth;
 

@@ -11,7 +11,7 @@ public class CharacterStatHandler : MonoBehaviour
     [SerializeField] private CharacterStat characterBaseStat;
     [HideInInspector]public CharacterStat CharacterCurrentStat;
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         CharacterCurrentStat = new CharacterStat();
         CharacterCurrentStat.Health = characterBaseStat.Health;

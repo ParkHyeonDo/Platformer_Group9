@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shop : MonoBehaviour
+public class shop : MonoBehaviour , IInteractable
 {
     public ItemData item;
     public ShopInventory shopinventory;
@@ -10,12 +10,9 @@ public class shop : MonoBehaviour
     public bool equipped;
     public int quantity;
 
-    void Start()
+
+    public void Interact() 
     {
-        
-    }
-    void Update()
-    {
-        
+        shopinventory.gameObject.SetActive(true);
     }
 }

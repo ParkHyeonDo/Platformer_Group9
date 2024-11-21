@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 500
   Mana: 0
+  Damage: 100
   Speed: 100
   JumpForce: 0
+  HaveKnockback: 1
+  KnockbackForce: 1
