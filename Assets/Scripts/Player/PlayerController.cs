@@ -127,8 +127,10 @@ public class PlayerController : MonoBehaviour
     public void OnInteract(InputAction.CallbackContext context) 
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.left / 2, Vector3.right);
+        Debug.DrawRay(transform.position + Vector3.left / 2, Vector3.right, Color.blue);
+        Debug.Log(hit.collider);
         if (hit.collider == null) return;
-        IInteractable interactable = GetComponent<IInteractable>();
+        IInteractable interactable = hit.collider.GetComponent<IInteractable>();
         if (interactable != null)
         {
             interactable.Interact();
