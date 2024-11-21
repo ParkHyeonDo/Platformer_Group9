@@ -4,13 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     [SerializeField] private string playerTag;
+    [SerializeField] private Image hpGause;
     public Player Player { get; private set; }
+    public GameObject gameOverUI;
 
     private void Awake()
     { 
@@ -19,6 +22,9 @@ public class GameManager : MonoBehaviour
 
         Player = GameObject.FindGameObjectWithTag(playerTag).GetComponent<Player>();
     }
-
+    private void healthBar()
+    {
+        //hpGause.fillAmount = 
+    }
 }
 

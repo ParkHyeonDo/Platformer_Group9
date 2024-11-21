@@ -201,7 +201,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.64, y: -1.82, z: -10}
+  m_LocalPosition: {x: 25.28, y: -4.43, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -223,7 +223,11 @@ MonoBehaviour:
   Offset: {x: 0, y: 0, z: -10}
   MapBoundary: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &698583957
+=======
+--- !u!1001 &1636673880
+>>>>>>> Dev
 =======
 --- !u!1001 &1636673880
 >>>>>>> Dev
@@ -241,6 +245,7 @@ PrefabInstance:
     - target: {fileID: 7503502742264408471, guid: 1b0aee46849aeec4e86f998b07d5fea8, type: 3}
       propertyPath: m_LocalPosition.x
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 0.93407744
       objectReference: {fileID: 0}
     - target: {fileID: 7503502742264408471, guid: 1b0aee46849aeec4e86f998b07d5fea8, type: 3}
@@ -251,6 +256,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.13011953
 =======
+=======
+>>>>>>> Dev
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7503502742264408471, guid: 1b0aee46849aeec4e86f998b07d5fea8, type: 3}
@@ -260,6 +267,9 @@ PrefabInstance:
     - target: {fileID: 7503502742264408471, guid: 1b0aee46849aeec4e86f998b07d5fea8, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+<<<<<<< HEAD
+>>>>>>> Dev
+=======
 >>>>>>> Dev
       objectReference: {fileID: 0}
     - target: {fileID: 7503502742264408471, guid: 1b0aee46849aeec4e86f998b07d5fea8, type: 3}
@@ -301,7 +311,11 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 698583957}
+=======
+  - {fileID: 1636673880}
+>>>>>>> Dev
 =======
   - {fileID: 1636673880}
 >>>>>>> Dev
