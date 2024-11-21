@@ -6,7 +6,6 @@ public class SoundSource : MonoBehaviour
 {
     private AudioSource audioSource;
 
-    [SerializeField][Range(0f, 1f)] private float soundEffectPitchVariance;
     public void Play(AudioClip clip,float soundEffectVolume,float soundEffectPitchVariance)
     {
         if (audioSource == null) 
