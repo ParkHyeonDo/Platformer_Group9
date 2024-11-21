@@ -21,11 +21,11 @@ public class ContactAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        Debug.Log(collision);
         HealthSystem healthSystem = collision.GetComponent<HealthSystem>();
         if (healthSystem != null) 
         {
-            bool DamageApply = healthSystem.TakeDamage(-characterStat.CharacterCurrentStat.Damage/*##강화스탯 추가*/);
+            bool DamageApply = healthSystem.TakeDamage(+characterStat.CharacterCurrentStat.Damage/*##강화스탯 추가*/);
 
             if (DamageApply && characterStat.CharacterCurrentStat.HaveKnockback) 
             {
