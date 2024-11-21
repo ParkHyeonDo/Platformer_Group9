@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class NextStageDoor : MonoBehaviour, IInteractable
 {
-    private bool isEnabled = false;
+    private bool isEnabled = true;
 
     public void EnableDoor()
     {
