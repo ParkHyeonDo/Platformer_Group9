@@ -2244,11 +2244,11 @@ GameObject:
   - component: {fileID: 966024887426143726}
   - component: {fileID: 6847744665431725492}
   - component: {fileID: 714478907193808404}
+  - component: {fileID: 7522626928260638437}
   - component: {fileID: 774304062836812226}
   - component: {fileID: 5618747386637155202}
   - component: {fileID: 629165832045572418}
   - component: {fileID: 8137188687957956837}
-  - component: {fileID: 7522626928260638437}
   - component: {fileID: 2005575988349984950}
   m_Layer: 3
   m_Name: Player
@@ -3200,8 +3200,8 @@ MonoBehaviour:
     Prefab: {fileID: 7654982108582645955, guid: 87b046f402d277d4c8b4f70ef6b0bd45, type: 3}
     StartPosition: {x: -3.5, y: -3.3, z: 0}
   stageNum: {fileID: 0}
-  Player: {fileID: 0}
-  CameraFollowScript: {fileID: 0}
+  Player: {fileID: 4768066133021290352}
+  CameraFollowScript: {fileID: 246982728604826603}
   stageProgress: {fileID: 0}
 --- !u!1 &8018438579593768846
 GameObject:
