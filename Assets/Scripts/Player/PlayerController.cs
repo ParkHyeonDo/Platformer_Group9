@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
                     playerRenderer.flipX = false;
                     WeaponFlip(false);
                 }
-                targetVector.x = currentMove.x * GameManager.Instance.Player.Stat.PlayerCurrentStat.Speed ;
+                targetVector.x = currentMove.x * GameManager.Instance.Player.Stat.CharacterCurrentStat.Speed ;
                 targetVector.y = rb.velocity.y;
                 rb.velocity = targetVector;
                 GameManager.Instance.Player.PlayerAnim.MoveAnimStart();
@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
         if (context.phase == InputActionPhase.Started && IsGround()) 
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
-            rb.AddForce(Vector2.up * GameManager.Instance.Player.Stat.PlayerCurrentStat.JumpForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * GameManager.Instance.Player.Stat.CharacterCurrentStat.JumpForce, ForceMode2D.Impulse);
             GameManager.Instance.Player.PlayerAnim.JumpAnimStart();
         }
     }
@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour
     {
         
         targetVector.x = Vector2.zero.x;
-        targetVector.y = currentMove.y * GameManager.Instance.Player.Stat.PlayerCurrentStat.Speed;
+        targetVector.y = currentMove.y * GameManager.Instance.Player.Stat.CharacterCurrentStat.Speed;
         rb.velocity = targetVector;
         GameManager.Instance.Player.PlayerAnim.LadderAnimStart();
         if (isLadder && !Physics2D.Raycast(transform.position + Vector3.down*0.5f, Vector3.down, 0.2f, LadderMask)) 
@@ -193,8 +193,8 @@ public class PlayerController : MonoBehaviour
             isDash = true;
             rb.gravityScale = 0;
             rb.velocity = new Vector2(0, 0/*rb.velocity.y*/);
-            if (!playerRenderer.flipX)  rb.AddForce(Vector2.right * GameManager.Instance.Player.Stat.PlayerCurrentStat.JumpForce*2f, ForceMode2D.Impulse);
-            else rb.AddForce(Vector2.left * GameManager.Instance.Player.Stat.PlayerCurrentStat.JumpForce*2f, ForceMode2D.Impulse);
+            if (!playerRenderer.flipX)  rb.AddForce(Vector2.right * GameManager.Instance.Player.Stat.CharacterCurrentStat.JumpForce*2f, ForceMode2D.Impulse);
+            else rb.AddForce(Vector2.left * GameManager.Instance.Player.Stat.CharacterCurrentStat.JumpForce*2f, ForceMode2D.Impulse);
             GameManager.Instance.Player.PlayerAnim.DashAnimStart();
         }
     }

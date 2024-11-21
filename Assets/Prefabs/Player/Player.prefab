@@ -324,8 +324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 532f088221cda1340bdf117140ebac31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerBaseStat: {fileID: 11400000, guid: 582c3d42a2d18d743914508839bec94a, type: 2}
-  PlayerCurrentStat: {fileID: 0}
+  characterBaseStat: {fileID: 11400000, guid: 582c3d42a2d18d743914508839bec94a, type: 2}
+  CharacterCurrentStat: {fileID: 0}
 --- !u!70 &629165833055822876
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -421,7 +421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8352094432433088681
 Transform:
   m_ObjectHideFlags: 0

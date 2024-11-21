@@ -222,7 +222,15 @@ MonoBehaviour:
   PlayerTrans: {fileID: 0}
   Offset: {x: 0, y: 0, z: -10}
   MapBoundary: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
+--- !u!1001 &698583957
+=======
 --- !u!1001 &1636673880
+>>>>>>> Dev
+=======
+--- !u!1001 &1636673880
+>>>>>>> Dev
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -236,6 +244,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7503502742264408471, guid: 1b0aee46849aeec4e86f998b07d5fea8, type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
+<<<<<<< HEAD
+      value: 0.93407744
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503502742264408471, guid: 1b0aee46849aeec4e86f998b07d5fea8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.1909404
+      objectReference: {fileID: 0}
+    - target: {fileID: 7503502742264408471, guid: 1b0aee46849aeec4e86f998b07d5fea8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.13011953
+=======
+=======
+>>>>>>> Dev
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7503502742264408471, guid: 1b0aee46849aeec4e86f998b07d5fea8, type: 3}
@@ -245,6 +267,10 @@ PrefabInstance:
     - target: {fileID: 7503502742264408471, guid: 1b0aee46849aeec4e86f998b07d5fea8, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+<<<<<<< HEAD
+>>>>>>> Dev
+=======
+>>>>>>> Dev
       objectReference: {fileID: 0}
     - target: {fileID: 7503502742264408471, guid: 1b0aee46849aeec4e86f998b07d5fea8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -284,4 +310,12 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+<<<<<<< HEAD
+<<<<<<< HEAD
+  - {fileID: 698583957}
+=======
   - {fileID: 1636673880}
+>>>>>>> Dev
+=======
+  - {fileID: 1636673880}
+>>>>>>> Dev

@@ -8,20 +8,20 @@ using UnityEngine;
 
 public class CharacterStatHandler : MonoBehaviour
 {
-    [SerializeField] private CharacterStat playerBaseStat;
-    [HideInInspector]public CharacterStat PlayerCurrentStat;
+    [SerializeField] private CharacterStat characterBaseStat;
+    [HideInInspector]public CharacterStat CharacterCurrentStat;
 
-    private void Start()
+    protected virtual void Start()
     {
-        PlayerCurrentStat = new CharacterStat();
-        PlayerCurrentStat.Health = playerBaseStat.Health;
-        PlayerCurrentStat.Mana = playerBaseStat.Mana;
-        PlayerCurrentStat.Damage = playerBaseStat.Damage;
-        PlayerCurrentStat.Speed = playerBaseStat.Speed;
-        PlayerCurrentStat.JumpForce = playerBaseStat.JumpForce;
+        CharacterCurrentStat = new CharacterStat();
+        CharacterCurrentStat.Health = characterBaseStat.Health;
+        CharacterCurrentStat.Mana = characterBaseStat.Mana;
+        CharacterCurrentStat.Damage = characterBaseStat.Damage;
+        CharacterCurrentStat.Speed = characterBaseStat.Speed;
+        CharacterCurrentStat.JumpForce = characterBaseStat.JumpForce;
 
-        PlayerCurrentStat.HaveKnockback = playerBaseStat.HaveKnockback;
-        PlayerCurrentStat.KnockbackForce = playerBaseStat.KnockbackForce;
+        CharacterCurrentStat.HaveKnockback = characterBaseStat.HaveKnockback;
+        CharacterCurrentStat.KnockbackForce = characterBaseStat.KnockbackForce;
     }
 }
 
