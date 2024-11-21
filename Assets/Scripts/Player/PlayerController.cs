@@ -42,7 +42,6 @@ public class PlayerController : MonoBehaviour
     public Transform WeaponTransform;
     private Transform vectorWeaponTransform;
 
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
