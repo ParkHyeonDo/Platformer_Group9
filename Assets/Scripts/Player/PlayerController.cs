@@ -32,6 +32,10 @@ public class PlayerController : MonoBehaviour
     
     private Transform vectorWeaponTransform;
 
+    [SerializeField] private AudioClip jumpClip;
+    [SerializeField] private AudioClip attackClip;
+    [SerializeField] private AudioClip dashClip;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -114,6 +118,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.AddForce(Vector2.up * GameManager.Instance.Player.Stat.CharacterCurrentStat.JumpForce, ForceMode2D.Impulse);
+            if (jumpClip) SoundManager.PlayClip(jumpClip);
             GameManager.Instance.Player.PlayerAnim.JumpAnimStart();
         }
     }
@@ -182,6 +187,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started && !IsAttack) 
         {
+            if (attackClip) SoundManager.PlayClip(attackClip);
             GameManager.Instance.Player.PlayerAnim.AttackAnimStart();
             IsAttack = true;
             
@@ -197,6 +203,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(0, 0/*rb.velocity.y*/);
             if (!playerRenderer.flipX)  rb.AddForce(Vector2.right * GameManager.Instance.Player.Stat.CharacterCurrentStat.JumpForce*2f, ForceMode2D.Impulse);
             else rb.AddForce(Vector2.left * GameManager.Instance.Player.Stat.CharacterCurrentStat.JumpForce*2f, ForceMode2D.Impulse);
+            if (dashClip) SoundManager.PlayClip(dashClip);
             GameManager.Instance.Player.PlayerAnim.DashAnimStart();
         }
     }

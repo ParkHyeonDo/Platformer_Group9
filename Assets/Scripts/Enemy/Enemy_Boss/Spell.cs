@@ -1,0 +1,47 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Spell : MonoBehaviour
+{
+    private Animator animator;
+    public GameObject lightningPrefab; 
+    public float strikeDelay = 2f; 
+    public float damage = 200f; 
+
+    private void Start()
+    {
+        InvokeRepeating("Strike", strikeDelay, strikeDelay); // ÀÏÁ¤ ½Ã°£¸¶´Ù ³«·Ú¸¦ ¶³¾î¶ß¸²
+    }
+
+    private void Strike()
+    {
+        // ·£´ýÇÑ À§Ä¡¿¡ ³«·Ú »ý¼º)
+        Vector3 strikePosition = new Vector3(Random.Range(-5f, 5f), transform.position.y + 5f, 0);
+        GameObject lightning = Instantiate(lightningPrefab, strikePosition, Quaternion.identity);
+        lightning.transform.localScale = new Vector3(3f, 3f, 3f);
+        // ³«·Ú°¡ ¶³¾îÁö´Â È¿°ú¸¦ ÁÖ±â À§ÇØ ÄÚ·çÆ¾ »ç¿ë
+        StartCoroutine(DropLightning(lightning));
+    }
+
+    private IEnumerator DropLightning(GameObject lightning)
+    {
+        float fallSpeed = 10f; // ³«·ÚÀÇ ¼Óµµ
+        Vector3 startPosition = lightning.transform.position;
+        Vector3 targetPosition = new Vector3(startPosition.x, startPosition.y - 5f, startPosition.z); // ¾Æ·¡·Î ¶³¾îÁü
+
+        while (lightning.transform.position.y > targetPosition.y)
+        {
+            lightning.transform.position = Vector3.MoveTowards(lightning.transform.position, targetPosition, fallSpeed * Time.deltaTime);
+            yield return null; // ´ÙÀ½ ÇÁ·¹ÀÓ±îÁö ´ë±â
+        }
+
+        DealDamage();
+        Destroy(lightning);
+    }
+
+    private void DealDamage()
+    {
+        Debug.Log("³«·Ú°¡ ¶³¾îÁ® ÇÇÇØ¸¦ ÁÜ: " + damage);
+    }
+}

@@ -326,6 +326,10 @@ MonoBehaviour:
   WeaponPosition: {fileID: 7030075791692766647}
   PlayerCollider: {fileID: 0}
   IsAttack: 0
+  moveClip: {fileID: 0}
+  jumpClip: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
+  attackClip: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
+  dashClip: {fileID: 8300000, guid: fe0b1f9aeb45b41b089175aeeabd5d95, type: 3}
 --- !u!95 &6847744666450460906
 Animator:
   serializedVersion: 5

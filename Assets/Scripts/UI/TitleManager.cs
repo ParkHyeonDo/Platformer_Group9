@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
         };
 
         SaveSystem.WriteSaveData(newGameData);
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("SampleScene");
         System.GC.Collect();
 
     }
@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour
         SaveData loadedData = SaveSystem.LoadGame();
         if (loadedData != null)
         {
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene("SampleScene");
         }
     }
 
