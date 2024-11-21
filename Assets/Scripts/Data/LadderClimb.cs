@@ -35,21 +35,5 @@ public class LadderClimb : MonoBehaviour
         }
     }
 
-    /*public void CheckGround() 
-    {
-        if (upGroundCollider != null) return;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position , Vector3.up, 1f, GameManager.Instance.Player.GroundMask);
-        upGroundCollider = hit.collider as BoxCollider2D;
-        
-    }
-
-    public void CheckLadderTop() 
-    {
-        if(ladderTop != null) return;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.up, 2f, GameManager.Instance.Player.LadderTopMask);
-        if (!hit) return;
-        ladderTop = hit.collider.transform;
-        
-    }*/
 }
 

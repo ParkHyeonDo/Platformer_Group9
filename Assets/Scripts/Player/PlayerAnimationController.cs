@@ -12,6 +12,7 @@ public class PlayerAnimationController : MonoBehaviour
     [Header("애니메이션")]
     [HideInInspector]
     public Animator PlayerAnimator;
+    private HealthSystem healthSystem;
     private string isMoveTr = "isMove";
     private string isJumpTr = "isJump";
     private string isAttackTr = "isAttack";
@@ -26,6 +27,7 @@ public class PlayerAnimationController : MonoBehaviour
     private void Awake()
     {
         PlayerAnimator = GetComponent<Animator>();
+        healthSystem = GetComponent<HealthSystem>();
 
         // 메모리 최적화
         isMoveAnim = Animator.StringToHash(isMoveTr);
@@ -33,6 +35,12 @@ public class PlayerAnimationController : MonoBehaviour
         isAttackAnim = Animator.StringToHash(isAttackTr);
         isLadderAnim = Animator.StringToHash(isLadderTr);
         isDashAnim = Animator.StringToHash(isDashTr);
+        
+    }
+
+    private void Start()
+    {
+        healthSystem.Ondamage += Hit;
     }
 
     public void MoveAnimStart() 
@@ -62,6 +70,7 @@ public class PlayerAnimationController : MonoBehaviour
     public void AttackAnimFinish() 
     {
         PlayerAnimator.SetBool(isAttackAnim, false);
+        GameManager.Instance.Player.Controller.IsAttack = false;
     }
 
     public void LadderAnimStart() 
@@ -80,10 +89,12 @@ public class PlayerAnimationController : MonoBehaviour
     public void DashAnimFinish() 
     {
         PlayerAnimator.SetBool(isDashAnim, false);
+        GameManager.Instance.Player.Controller.DashReset();
     }
 
-    
-
-
+    public void Hit() 
+    {
+        
+    }
 }
 

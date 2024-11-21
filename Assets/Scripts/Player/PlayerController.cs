@@ -10,22 +10,26 @@ public class PlayerController : MonoBehaviour
     public LayerMask GroundMask;
     public LayerMask LadderMask;
     public LayerMask LadderTopMask;
+    public LayerMask DoorMask;
+    public LayerMask BoxMask;
+    public GameObject WeaponPosition;
+    [HideInInspector] public CapsuleCollider2D PlayerCollider;
 
-    private bool isAttack;
+    [HideInInspector] public bool IsAttack;
+
     private bool isGround;
     private bool isLadder;
     private bool isDash;
     private bool isHit;
-
     private float playerGravity;
     private float weaponScale=1f;
+
     private Rigidbody2D rb;
     private SpriteRenderer playerRenderer;
-    public CapsuleCollider2D PlayerCollider;
     private Vector2 currentMove;
     private Vector2 targetVector;
     private LadderClimb ladderClimb;
-    public Transform WeaponTransform;
+    
     private Transform vectorWeaponTransform;
 
     private void Awake()
@@ -78,7 +82,7 @@ public class PlayerController : MonoBehaviour
     {
         if (currentMove.x != 0)
         {
-            if (!isAttack)
+            if (!IsAttack)
             {
                 if (currentMove.x < 0) 
                 {
@@ -122,9 +126,12 @@ public class PlayerController : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext context) 
     {
-        if (Physics2D.Raycast(transform.position, Vector3.right, 1f, GroundMask))
-        { 
-        
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.left / 2, Vector3.right);
+        if (hit.collider == null) return;
+        IInteractable interactable = GetComponent<IInteractable>();
+        if (interactable != null)
+        {
+            interactable.Interact();
         }
     }
 
@@ -171,10 +178,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnAttack(InputAction.CallbackContext context) 
     {
-        if (context.phase == InputActionPhase.Started && !isAttack) 
+        if (context.phase == InputActionPhase.Started && !IsAttack) 
         {
             GameManager.Instance.Player.PlayerAnim.AttackAnimStart();
-            isAttack = true;
+            IsAttack = true;
+            
         }
     }
 
@@ -191,15 +199,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void DashReset() 
+    {
+        isDash = false;
+        rb.gravityScale = playerGravity;
+    }
+
     private void WeaponFlip(bool leftVector) 
     {
         if (!leftVector)
         {
-            WeaponTransform.localScale = Vector3.one * weaponScale;
+            WeaponPosition.transform.localScale = Vector3.one * weaponScale;
         }
         else 
         {
-            WeaponTransform.localScale = - Vector3.one * weaponScale;
+            WeaponPosition.transform.localScale = - Vector3.one * weaponScale;
         }
     }
 

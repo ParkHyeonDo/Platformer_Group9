@@ -11,6 +11,7 @@ public class StageManager : MonoBehaviour
     private int _curStageIdx = 0;
     public GameObject Player;
     public CameraFollow CameraFollowScript;
+    public StageProgress stageProgress;
 
     private void Start()
     {
@@ -42,6 +43,11 @@ public class StageManager : MonoBehaviour
                     CameraFollowScript.SetMapBoundary(mapBoundary);
                 }
             }
+        }
+
+        if (stageProgress != null)
+        {
+            //stageProgress.stageMonster.InitializeStageMonsters();
         }
         _curStageIdx = curStageIdx;
     }
