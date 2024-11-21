@@ -18,7 +18,7 @@ public class HealthSystem : MonoBehaviour , IDamagable
 
     private void Start()
     {
-        maxHealth = GameManager.Instance.Player.Stat.PlayerCurrentStat.Health;
+        maxHealth = GameManager.Instance.Player.Stat.CharacterCurrentStat.Health;
     }
 
     private void Update()
@@ -38,11 +38,11 @@ public class HealthSystem : MonoBehaviour , IDamagable
         if (checkDisableTime < HitDisableTime) return false;
 
         checkDisableTime = 0;
-        GameManager.Instance.Player.Stat.PlayerCurrentStat.Health -= Amount;
-        GameManager.Instance.Player.Stat.PlayerCurrentStat.Health = (int)Mathf.Clamp(GameManager.Instance.Player.Stat.PlayerCurrentStat.Health, 0, maxHealth);
+        GameManager.Instance.Player.Stat.CharacterCurrentStat.Health -= Amount;
+        GameManager.Instance.Player.Stat.CharacterCurrentStat.Health = (int)Mathf.Clamp(GameManager.Instance.Player.Stat.CharacterCurrentStat.Health, 0, maxHealth);
 
 
-        if (GameManager.Instance.Player.Stat.PlayerCurrentStat.Health <= 0)
+        if (GameManager.Instance.Player.Stat.CharacterCurrentStat.Health <= 0)
         {
             Die();
             return true;
