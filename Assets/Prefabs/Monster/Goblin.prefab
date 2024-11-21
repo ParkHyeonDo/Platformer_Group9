@@ -65,7 +65,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0074037015, y: -0.024832577}
+  m_Offset: {x: 0.28324667, y: -0.024832577}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -76,7 +76,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8138477, y: 0.43614906}
+  m_Size: {x: 0.2621618, y: 0.43614906}
   m_EdgeRadius: 0
 --- !u!114 &8552459249042787473
 MonoBehaviour:
@@ -209,11 +209,9 @@ GameObject:
   - component: {fileID: 5292091245180574262}
   - component: {fileID: 7689949237223129439}
   - component: {fileID: 8242185896793134165}
-  - component: {fileID: 478799501896745048}
   - component: {fileID: 6718080907652590388}
   - component: {fileID: 168865117956418048}
   - component: {fileID: 8736226985841821478}
-  - component: {fileID: 5498184795780036083}
   m_Layer: 10
   m_Name: Goblin
   m_TagString: Untagged
@@ -322,24 +320,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d9b3035ca1e42245a33ab532871478c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   nextMove: 0
+  WeaponTransform: {fileID: 5280124126871229209}
   targetLayer:
     serializedVersion: 2
-    m_Bits: 0
---- !u!114 &478799501896745048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4235333364604501066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bc8e87e8de2af542811c369c26d4d14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
+    m_Bits: 8
 --- !u!114 &6718080907652590388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,48 +410,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5498184795780036083
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4235333364604501066}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.011718094, y: -0.042185158}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5, y: 1.5}
-    newSize: {x: 1.5, y: 1.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.6171812, y: 0.49692965}
-  m_EdgeRadius: 0

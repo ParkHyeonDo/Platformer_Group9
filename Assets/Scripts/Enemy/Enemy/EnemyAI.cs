@@ -5,16 +5,16 @@ using UnityEngine.UIElements;
 
 public class EnemyAI : MonoBehaviour
 {
-    public int health;
     public int nextMove;
+    public Transform WeaponTransform;
     private Vector2 boxSize = new Vector2(5, 3);
     public LayerMask targetLayer; // 감지할 레이어
     private MonsterAnimationController animationController;
     private Transform playerTransform;
+    private bool isChasingPlayer;
+    private float weaponScale = 1f;
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
-    
-
 
     private void Awake()
     {
@@ -28,6 +28,12 @@ public class EnemyAI : MonoBehaviour
     private void Update()
     {
         DetectPlayer();
+
+        if (isChasingPlayer && playerTransform != null)
+        {
+            MoveTowardsPlayer();
+        }
+        
     }
     private void FixedUpdate()
     {
@@ -47,62 +53,60 @@ public class EnemyAI : MonoBehaviour
         foreach (Collider2D collider in hitColliders)
         {
             // 각 콜라이더가 "Enemy" 태그를 가지고 있는지 확인
-            if (collider.CompareTag("Player"))
+            if (collider.gameObject.CompareTag("Player"))
             {
-                // "Player" 태그가 있는 경우 처리 수행
-                Debug.Log("적 감지됨: " + collider.name);
-                // 여기에 추가적인 처리 로직을 작성할 수 있습니다.
+                playerTransform = collider.transform; // 플레이어의 트랜스폼 저장
+                isChasingPlayer = true; // 플레이어 추적 시작
+                Debug.Log("플레이어 인지! 추적 시작.");
             }
         }
     }
-    public void TakeDamage(int damage)
+
+    void MoveTowardsPlayer()
     {
-        health -= damage;
-        animationController.TriggerHit();
-
-        if (health <= 0)
-        {
-            Die();
-        }
-        else
-        {
-            Debug.Log("적이 피해를 입었습니다. 남은 체력: " + health);
-        }
-    
+        animationController.SetWalking(true); // 이동 애니메이션 시작
+        Vector3 direction = (playerTransform.position - transform.position).normalized;
+        transform.position += direction * 2 * Time.deltaTime;
+        spriteRenderer.flipX = direction.x < 0;
+        Weaponpoint(true);
     }
-
-    private void Die()
-    {
-        animationController.SetDead(true);
-        rb.velocity = Vector2.zero; // 죽을 때 움직임 멈추기
-        GetComponent<Collider2D>().enabled = false; // 충돌 비활성화
-        this.enabled = false; // 스크립트 비활성화
-        Debug.Log("적이 사망했습니다.");
-
-        // 2초 후에 GameObject를 제거
-        Destroy(gameObject, 2f);
-    }
+   
     private void OnDrawGizmos()
     {
         // Gizmos를 사용하여 박스 범위를 시각적으로 표시
         Gizmos.color = Color.red; // 색상 설정
-        Gizmos.DrawWireCube(transform.position, boxSize*rayMultiple); // 박스 그리기
+        Gizmos.DrawWireCube(transform.position, boxSize); // 박스 그리기
     }
 
     void Think()
     {
         nextMove = Random.Range(-1, 2);
         Invoke("Think", 3);
-        
+
         if (nextMove != 0)
+        {
             spriteRenderer.flipX = nextMove == -1;
+            Weaponpoint(true);
+        }   
     }
 
     void Turn()
     {
         nextMove *= -1;
         spriteRenderer.flipX = nextMove == -1;
+        Weaponpoint (true);
         CancelInvoke();
         Invoke("Think",3);
+    }
+    private void Weaponpoint(bool leftVector)
+    {
+        if (!leftVector)
+        {
+            WeaponTransform.localScale = Vector3.one * weaponScale;
+        }
+        else
+        {
+            WeaponTransform.localScale = -Vector3.one * weaponScale;
+        }
     }
 }
