@@ -86,7 +86,7 @@ public class EnemyAI : MonoBehaviour
     {
         // Gizmos를 사용하여 박스 범위를 시각적으로 표시
         Gizmos.color = Color.red; // 색상 설정
-        Gizmos.DrawWireCube(transform.position, boxSize); // 박스 그리기
+        Gizmos.DrawWireCube(transform.position, boxSize*rayMultiple); // 박스 그리기
     }
 
     void Think()
