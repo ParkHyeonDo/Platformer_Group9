@@ -38,5 +38,9 @@ public class MonsterAnimationController : MonoBehaviour
     {
         animator.SetBool("IsAttack", isAttack);
     }
+    public void SetSpell(bool isSpell)
+    {
+        animator.SetBool("IsSpell", isSpell);
+    }
     
 }

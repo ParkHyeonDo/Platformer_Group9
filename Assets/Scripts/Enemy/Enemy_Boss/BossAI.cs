@@ -6,7 +6,7 @@ public class BossAI : MonoBehaviour
 {
     public int nextMove;
     public Transform WeaponTransform;
-    private Vector2 boxSize = new Vector2(12, 5);
+    private Vector2 boxSize = new Vector2(8, 3);
     public LayerMask targetLayer; // 감지할 레이어
     private MonsterAnimationController animationController;
     private Transform playerTransform;
@@ -40,7 +40,8 @@ public class BossAI : MonoBehaviour
 
         Vector2 frontVec = new Vector2(rb.position.x + nextMove * 0.5f, rb.position.y);
         Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
-        RaycastHit2D rayHit = Physics2D.Raycast(rb.position, Vector3.down, 2, LayerMask.GetMask("Ground"));
+        RaycastHit2D rayHit = Physics2D.Raycast(rb.position, Vector3.down, 3, LayerMask.GetMask("Player"));
+
         if (rayHit.collider == null)
         {
             Turn();
@@ -58,7 +59,6 @@ public class BossAI : MonoBehaviour
             {
                 playerTransform = collider.transform; // 플레이어의 트랜스폼 저장
                 isChasingPlayer = true; // 플레이어 추적 시작
-                Debug.Log("플레이어 인지! 추적 시작.");
             }
         }
     }
@@ -67,7 +67,7 @@ public class BossAI : MonoBehaviour
     {
         animationController.SetWalking(true); // 이동 애니메이션 시작
         Vector3 direction = (playerTransform.position - transform.position).normalized;
-        transform.position += direction * 2 * Time.deltaTime;
+        transform.position += direction * 1.2f * Time.deltaTime;
         spriteRenderer.flipX = direction.x > 0;
         Weaponpoint(true);
     }

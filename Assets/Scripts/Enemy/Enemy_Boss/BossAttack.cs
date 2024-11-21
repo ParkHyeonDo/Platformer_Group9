@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class EnemyWeapon : MonoBehaviour
+public class BossAttack : MonoBehaviour
 {
-    private MonsterAnimationController animator;
+    private MonsterAnimationController parentAnimController;
     private float lastAttackTime;
 
     void Start()
     {
-        animator = GetComponentInParent<MonsterAnimationController>();
+        parentAnimController = GetComponentInParent<MonsterAnimationController>();
 
-        if (animator == null)
+        if (parentAnimController == null)
         {
             Debug.LogError("부모 객체에 MonsterAnimationController가 없습니다!");
         }
@@ -19,10 +19,10 @@ public class EnemyWeapon : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (animator != null && Time.time >= lastAttackTime + 1)
+            if (parentAnimController != null && Time.time >= lastAttackTime + 3)
             {
-                animator.TriggerAttack();
-                animator.SetAttack(true);
+                parentAnimController.TriggerAttack();
+                parentAnimController.SetAttack(true);
                 Debug.Log("공격 애니메이션 실행");
                 lastAttackTime = Time.time;
             }
@@ -33,10 +33,10 @@ public class EnemyWeapon : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (animator != null)
+            if (parentAnimController != null)
             {
-                animator.SetWalking(true);
-                Debug.Log("걷기 애니메이션으로 전환");
+                parentAnimController.SetWalking(true);
+                Debug.Log("걷기으로 전환");
             }
         }
     }
