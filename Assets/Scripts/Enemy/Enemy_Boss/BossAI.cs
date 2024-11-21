@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class EnemyAI : MonoBehaviour
+public class BossAI : MonoBehaviour
 {
     public int nextMove;
     public Transform WeaponTransform;
-    private Vector2 boxSize = new Vector2(5, 3);
+    private Vector2 boxSize = new Vector2(12, 6);
     public LayerMask targetLayer; // 감지할 레이어
     private MonsterAnimationController animationController;
     private Transform playerTransform;
@@ -33,14 +32,14 @@ public class EnemyAI : MonoBehaviour
         {
             MoveTowardsPlayer();
         }
-        
+
     }
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(nextMove, rb.velocity.y);
 
-        Vector2 frontVec = new Vector2(rb.position.x + nextMove*0.5f, rb.position.y);
-        Debug.DrawRay(frontVec, Vector3.down, new Color(0,1,0));
+        Vector2 frontVec = new Vector2(rb.position.x + nextMove * 0.5f, rb.position.y);
+        Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));
         RaycastHit2D rayHit = Physics2D.Raycast(rb.position, Vector3.down, 2, LayerMask.GetMask("Ground"));
         if (rayHit.collider == null)
         {
@@ -67,10 +66,10 @@ public class EnemyAI : MonoBehaviour
         animationController.SetWalking(true); // 이동 애니메이션 시작
         Vector3 direction = (playerTransform.position - transform.position).normalized;
         transform.position += direction * 2 * Time.deltaTime;
-        spriteRenderer.flipX = direction.x < 0;
+        spriteRenderer.flipX = direction.x > 0;
         Weaponpoint(true);
     }
-   
+
     private void OnDrawGizmos()
     {
         // Gizmos를 사용하여 박스 범위를 시각적으로 표시
@@ -85,18 +84,18 @@ public class EnemyAI : MonoBehaviour
 
         if (nextMove != 0)
         {
-            spriteRenderer.flipX = nextMove == -1;
+            spriteRenderer.flipX = nextMove == 1;
             Weaponpoint(true);
-        }   
+        }
     }
 
     void Turn()
     {
         nextMove *= -1;
-        spriteRenderer.flipX = nextMove == -1;
-        Weaponpoint (true);
+        spriteRenderer.flipX = nextMove == 1;
+        Weaponpoint(true);
         CancelInvoke();
-        Invoke("Think",3);
+        Invoke("Think", 3);
     }
     private void Weaponpoint(bool leftVector)
     {
