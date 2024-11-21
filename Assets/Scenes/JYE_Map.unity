@@ -401,7 +401,10 @@ MonoBehaviour:
     StartPosition: {x: -9, y: -2.3, z: 0}
   - StageName: Stage2
     Prefab: {fileID: 633297445109311538, guid: b1f35393c5aa1dd43911dc165114b500, type: 3}
-    StartPosition: {x: 0, y: 0, z: 0}
+    StartPosition: {x: -9.5, y: -1.3, z: 0}
+  - StageName: Stage3
+    Prefab: {fileID: 7654982108582645955, guid: 87b046f402d277d4c8b4f70ef6b0bd45, type: 3}
+    StartPosition: {x: -3.9, y: -3.3, z: 0}
   Player: {fileID: 1363070437}
   CameraFollowScript: {fileID: 901519093}
   stageProgress: {fileID: 0}
