@@ -22,10 +22,12 @@ public class CameraFollow : MonoBehaviour
         Camera mainCamera = Camera.main;
         cameraHalfHeight = mainCamera.orthographicSize;
         cameraHalfWidth = cameraHalfHeight * mainCamera.aspect;
-        
+
+        Offset = new Vector3(0, 0, -10);
+
         if (PlayerTrans != null)
         {
-            Offset = transform.position - PlayerTrans.position;
+            transform.position = PlayerTrans.position + Offset;
         }
 
         if (MapBoundary != null)
@@ -40,6 +42,8 @@ public class CameraFollow : MonoBehaviour
         {
             return;
         }
+
+        Offset = new Vector3(0, 0, -10);
 
         Vector3 targetPosition = PlayerTrans.position + Offset;
 

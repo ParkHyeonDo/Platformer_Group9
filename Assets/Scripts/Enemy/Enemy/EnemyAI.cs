@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -15,6 +16,8 @@ public class EnemyAI : MonoBehaviour
     private float weaponScale = 1f;
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
+    private float checkTime = 3;
+    private float turnTime = 2;
 
     private void Awake()
     {
@@ -38,15 +41,17 @@ public class EnemyAI : MonoBehaviour
     {
         rb.velocity = new Vector2(nextMove, rb.velocity.y);
 
-        Vector2 frontVec = new Vector2(rb.position.x + nextMove * 0.3f, rb.position.y);
+        Vector2 frontVec = new Vector2(rb.position.x + nextMove * 0.8f, rb.position.y);
         Debug.DrawRay(frontVec, Vector3.down, new Color(0,1,0));
         RaycastHit2D rayHit = Physics2D.Raycast(rb.position, Vector3.down, 2, LayerMask.GetMask("Ground"));
-        if (rayHit.collider == null)
+        if (!rayHit.collider && checkTime > turnTime)
         {
             Debug.Log("∑π¿Ã∞° ∂•ø° ¥Í¡ˆ æ ¿Ω");
             Turn();
+            checkTime = 0; 
         }
     }
+    
     void DetectPlayer()
     {
         Collider2D[] hitColliders = Physics2D.OverlapBoxAll(transform.position, boxSize, 0f, targetLayer);
