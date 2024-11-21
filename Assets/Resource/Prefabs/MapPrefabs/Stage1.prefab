@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 8279172622090376216}
   - component: {fileID: 3117037654836244501}
   - component: {fileID: 2738663702373991980}
+  - component: {fileID: 906604757026010509}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -455,6 +456,18 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &906604757026010509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353830742199480623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cba60ab2e18c014abf7a9632f3a27ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1527016959817148794
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +480,7 @@ GameObject:
   - component: {fileID: 6581807520565283640}
   - component: {fileID: 7851466994806492066}
   - component: {fileID: 7362166686316674158}
+  - component: {fileID: 7174463383981529274}
   m_Layer: 0
   m_Name: RewardBox
   m_TagString: Untagged
@@ -690,6 +704,18 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &7174463383981529274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527016959817148794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a784f19bb99594cb1514d9a831bad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1554263577758874731
 GameObject:
   m_ObjectHideFlags: 0
