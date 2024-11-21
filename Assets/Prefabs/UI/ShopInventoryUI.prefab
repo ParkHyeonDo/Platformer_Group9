@@ -305,8 +305,8 @@ GameObject:
   - component: {fileID: 1809510920943559745}
   - component: {fileID: 7472798005619497698}
   m_Layer: 5
-  m_Name: Shop (1)
-  m_TagString: Untagged
+  m_Name: Bread
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -441,11 +441,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41468efa45f5294ea57838aa80ae208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 87ae623afdd6c924a8f349453a58d74f, type: 2}
   shopinventory: {fileID: 3928042869571898975}
   index: 0
   equipped: 0
-  quantity: 0
+  quantity: 100
 --- !u!1 &821298258196457414
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,8 +925,8 @@ GameObject:
   - component: {fileID: 4951903015429976708}
   - component: {fileID: 7116166864221641570}
   m_Layer: 5
-  m_Name: Shop
-  m_TagString: Untagged
+  m_Name: Meat
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1061,11 +1061,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41468efa45f5294ea57838aa80ae208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 44ddcd46abecc5b489ac3ce6db879d47, type: 2}
   shopinventory: {fileID: 3928042869571898975}
   index: 0
   equipped: 0
-  quantity: 0
+  quantity: 100
 --- !u!1 &4415163035250139448
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,7 +1082,7 @@ GameObject:
   - component: {fileID: 5693896277971525871}
   m_Layer: 5
   m_Name: ShopInventoryUI
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1413,7 +1413,7 @@ GameObject:
   - component: {fileID: 7771868492953061808}
   m_Layer: 5
   m_Name: Slots
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1556,8 +1556,8 @@ GameObject:
   - component: {fileID: 5202276474083107095}
   - component: {fileID: 7071942953976557805}
   m_Layer: 5
-  m_Name: Shop (3)
-  m_TagString: Untagged
+  m_Name: Sword2
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1692,11 +1692,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41468efa45f5294ea57838aa80ae208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: e28aca293bcd18143a7816c90c0ea8ea, type: 2}
   shopinventory: {fileID: 3928042869571898975}
   index: 0
   equipped: 0
-  quantity: 0
+  quantity: 1
 --- !u!1 &5513731600536820932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2187,7 +2187,7 @@ GameObject:
   - component: {fileID: 9071923839204831314}
   m_Layer: 5
   m_Name: BG
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2520,8 +2520,8 @@ GameObject:
   - component: {fileID: 8009288558115184755}
   - component: {fileID: 8069257253342895036}
   m_Layer: 5
-  m_Name: Shop (2)
-  m_TagString: Untagged
+  m_Name: Sword1
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2656,11 +2656,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41468efa45f5294ea57838aa80ae208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: 7a13959775267614781ba1af33d0c2e9, type: 2}
   shopinventory: {fileID: 3928042869571898975}
   index: 0
   equipped: 0
-  quantity: 0
+  quantity: 1
 --- !u!1 &7605243410620065731
 GameObject:
   m_ObjectHideFlags: 0
@@ -3153,8 +3153,8 @@ GameObject:
   - component: {fileID: 4495308087617223402}
   - component: {fileID: 1769285875209499940}
   m_Layer: 5
-  m_Name: Shop (4)
-  m_TagString: Untagged
+  m_Name: Sword3
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3289,11 +3289,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c41468efa45f5294ea57838aa80ae208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
+  item: {fileID: 11400000, guid: f09fc1e06eee72244a9f269a309a15f8, type: 2}
   shopinventory: {fileID: 3928042869571898975}
   index: 0
   equipped: 0
-  quantity: 0
+  quantity: 1
 --- !u!1 &9160607357172236487
 GameObject:
   m_ObjectHideFlags: 0
