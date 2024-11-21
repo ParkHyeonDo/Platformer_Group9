@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 629165833055822876}
   - component: {fileID: 8137188686949699003}
   - component: {fileID: 7522626929375720379}
+  - component: {fileID: 2005575987221116392}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -390,6 +391,19 @@ MonoBehaviour:
   Stats: {fileID: 0}
   Inventory: {fileID: 0}
   Stat: {fileID: 0}
+--- !u!114 &2005575987221116392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768066134152100398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb8de3b31af7818468c7c68f5754cc05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitDisableTime: 1
 --- !u!1 &7030075791692766647
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,6 +414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8352094432433088681}
   - component: {fileID: 1181301346314089166}
+  - component: {fileID: 6867759307085794447}
   m_Layer: 3
   m_Name: WeaponPosition
   m_TagString: Untagged
@@ -467,3 +482,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.29362965, y: 0.6857729}
   m_EdgeRadius: 0
+--- !u!114 &6867759307085794447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7030075791692766647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21f1e44fb4da0ea43b1acd600548b6d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
