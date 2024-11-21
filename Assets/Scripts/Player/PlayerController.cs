@@ -126,13 +126,13 @@ public class PlayerController : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext context) 
     {
-        if (Physics2D.Raycast(transform.position, Vector3.right, 1f, BoxMask))
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + Vector3.left / 2, Vector3.right);
+        if (hit.collider == null) return;
+        /*IInteractable interactable = GetComponent<IInteractable>();
+        if (interactable != null)
         {
-
-        } else if (Physics2D.Raycast(transform.position, Vector3.right, 1f, DoorMask))
-        {
-        
-        }
+            OnInteract();
+        }*/
     }
 
     public void OnLadder(InputAction.CallbackContext context)
