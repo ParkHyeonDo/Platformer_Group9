@@ -9,6 +9,7 @@ public class HealthSystem : MonoBehaviour , IDamagable
 
     private float checkDisableTime;
     private bool isHitted = false;
+    private string playerTag = "Player";
 
     public event Action HitDisableEnd;
     public event Action Ondamage;
@@ -60,9 +61,12 @@ public class HealthSystem : MonoBehaviour , IDamagable
 
     public void Die() 
     {
-        if (this.gameObject.CompareTag("Player")) 
+        if (this.gameObject.CompareTag(playerTag)) 
         {
             Debug.Log("플레이어 사망");
+            return;
         }
+        // 몬스터 애니메이션 연결
+        Destroy(gameObject);
     }
 }
