@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public GameObject WeaponPosition;
     [HideInInspector] public CapsuleCollider2D PlayerCollider;
 
-    public bool IsAttack;
+    [HideInInspector] public bool IsAttack;
 
     private bool isGround;
     private bool isLadder;

@@ -7,7 +7,7 @@ public class HealthSystem : MonoBehaviour , IDamagable
 {
     [SerializeField] private float HitDisableTime;
 
-    private float checkDisableTime;
+    private float checkDisableTime = float.MaxValue;
     private bool isHitted = false;
     private string playerTag = "Player";
 
@@ -16,10 +16,6 @@ public class HealthSystem : MonoBehaviour , IDamagable
 
     private float maxHealth;
 
-    private void Awake()
-    {
-
-    }
     private void Start()
     {
         maxHealth = GameManager.Instance.Player.Stat.PlayerCurrentStat.Health;
