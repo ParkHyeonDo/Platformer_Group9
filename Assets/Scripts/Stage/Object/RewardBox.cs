@@ -16,6 +16,7 @@ public class RewardBox : MonoBehaviour
 
     private void OpenBox()
     {
+        Debug.Log("box");
         // TODO : 상자 오픈 시 나오는 리워드 지급
     }
 }

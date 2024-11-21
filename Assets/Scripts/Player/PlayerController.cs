@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Physics2D.Raycast(transform.position, Vector3.right, 1f, BoxMask))
         {
-
+            
         } else if (Physics2D.Raycast(transform.position, Vector3.right, 1f, DoorMask))
         {
         
