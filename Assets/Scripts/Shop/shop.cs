@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shop : MonoBehaviour
+public class shop : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public ItemData item;
+    public ShopInventory shopinventory;
+    public int index;
+    public bool equipped;
+    public int quantity;
+
     void Start()
     {
         
