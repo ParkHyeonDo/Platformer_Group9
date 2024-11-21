@@ -17,14 +17,14 @@ public class PlayerStats : CharacterStatHandler
     {
         base.Start();
         currentHealth = maxHealth;
-        PlayerCurrentStat.Health = maxHealth;
+        CharacterCurrentStat.Health = maxHealth;
 
     }
 
     public void RecoverHealth(int amount) //for health ui
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-        PlayerCurrentStat.Health = currentHealth;
+        CharacterCurrentStat.Health = currentHealth;
         Debug.Log($"현재 체력: {currentHealth}/{maxHealth}");
     }
     public void UseItem(ItemData item)
