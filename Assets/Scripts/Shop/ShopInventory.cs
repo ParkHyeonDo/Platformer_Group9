@@ -31,7 +31,7 @@ public class ShopInventory : MonoBehaviour
     private ItemType itemType;
     private ItemObject itemObject;
 
-
+    public List<ItemData> shopItems = new List<ItemData>();
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +45,9 @@ public class ShopInventory : MonoBehaviour
         }
         UpdateUpgradeButtonStatus();
     }
-   
+
+  
+
     void Update()
     {
         
