@@ -5,20 +5,24 @@ using System;
 
 public class Player : MonoBehaviour
 {
-    public PlayerController controller;
-    public PlayerStats stats;
-    public PlayerInventory inventory;
+    [HideInInspector]
+    public PlayerController Controller;
+    public PlayerAnimationController PlayerAnim;
+    public PlayerStats Stats;
+    public PlayerInventory Inventory;
+    public CharacterStatHandler Stat;
 
     private void Awake()
     {
-        controller = GetComponent<PlayerController>();
-        stats = GetComponent<PlayerStats>();
-        inventory = GetComponent<PlayerInventory>();   
-
+        Controller = GetComponent<PlayerController>();
+        Stats = GetComponent<PlayerStats>();
+        Inventory = GetComponent<PlayerInventory>();
+        Stat = GetComponent<CharacterStatHandler>();
+        PlayerAnim = GetComponent<PlayerAnimationController>();
     }
 
     public void Exam()
     {
-        GameManager.Instance.Player.stats.currentHealth = 0;
+        GameManager.Instance.Player.Stats.currentHealth = 0;
     }
 }

@@ -9,9 +9,9 @@ using UnityEngine;
 
 public class PlayerAnimationController : MonoBehaviour
 {
-    private Animator animator;
-
     [Header("애니메이션")]
+    [HideInInspector]
+    public Animator PlayerAnimator;
     private string isMoveTr = "isMove";
     private string isJumpTr = "isJump";
     private string isAttackTr = "isAttack";
@@ -25,7 +25,7 @@ public class PlayerAnimationController : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        PlayerAnimator = GetComponent<Animator>();
 
         // 메모리 최적화
         isMoveAnim = Animator.StringToHash(isMoveTr);
@@ -37,19 +37,50 @@ public class PlayerAnimationController : MonoBehaviour
 
     public void MoveAnimStart() 
     {
-        animator.SetBool(isMoveAnim, true);
+        PlayerAnimator.SetBool(isMoveAnim, true);
+    }
+
+    public void MoveAnimFinish()
+    {
+        PlayerAnimator.SetBool(isMoveAnim, false);
     }
 
     public void JumpAnimStart() 
     {
-    
+        PlayerAnimator.SetBool(isJumpAnim, true);
     }
 
-    public void AttackAnimStart() { }
+    public void JumpAnimFinish() 
+    {
+        PlayerAnimator.SetBool(isJumpAnim, false);
+    }
 
-    public void LadderAnimStart() { }
+    public void AttackAnimStart() 
+    {
+        PlayerAnimator.SetBool(isAttackAnim, true);
+    }
+    public void AttackAnimFinish() 
+    {
+        PlayerAnimator.SetBool(isAttackAnim, false);
+    }
 
-    public void DashAnimStart() { }
+    public void LadderAnimStart() 
+    {
+        PlayerAnimator.SetBool(isLadderAnim, true);
+    }
+    public void LadderAnimFinish() 
+    {
+        PlayerAnimator.SetBool(isLadderAnim, false);
+    }
+
+    public void DashAnimStart() 
+    {
+        PlayerAnimator.SetBool(isDashAnim, true);
+    }
+    public void DashAnimFinish() 
+    {
+        PlayerAnimator.SetBool(isDashAnim, false);
+    }
 
     
 
