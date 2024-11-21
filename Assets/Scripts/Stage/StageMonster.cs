@@ -21,12 +21,12 @@ public class StageMonster : MonoBehaviour
 
     //private void OnEnable()
     //{
-    //    Monster.OnMonsterDefeated += HandleMonster;
+    //    Monster.Die = HandleMonster;
     //}
 
     //private void OnDisable()
     //{
-    //    Monster.OnMonsterDefeated -= HandleMonster;
+    //    Monster.Die -= HandleMonster;
     //}
 
     //private void HandleMonster(Monster monster)

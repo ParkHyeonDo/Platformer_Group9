@@ -23,6 +23,7 @@ public class EnemyWeapon : MonoBehaviour
             if (parentAnimController != null && Time.time >= lastAttackTime + attackCooldown)
             {
                 parentAnimController.TriggerAttack();
+                parentAnimController.SetAttack(true);
                 Debug.Log("공격 애니메이션 실행");
                 lastAttackTime = Time.time;
             }

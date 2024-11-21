@@ -9,6 +9,7 @@ public class StageManager : MonoBehaviour
     public Stage[] Stages;
     private StageLoader _stageLoader;
     private int _curStageIdx = 0;
+
     public GameObject Player;
     public CameraFollow CameraFollowScript;
     public StageProgress stageProgress;
@@ -16,6 +17,19 @@ public class StageManager : MonoBehaviour
     private void Start()
     {
         _stageLoader = GetComponent<StageLoader>();
+
+        SaveData loadedData = SaveSystem.LoadGame();
+        if (loadedData != null)
+        {
+            _curStageIdx = loadedData.CurrentStageIndex;
+
+            PlayerStats playerStats = Player.GetComponent<PlayerStats>();
+            if (playerStats != null)
+            {
+                playerStats.currentHealth = Mathf.Clamp(loadedData.PlayerHealth, 0, playerStats.maxHealth);
+            }
+        }
+
         ChangeStage(_curStageIdx);
     }
 
@@ -60,5 +74,18 @@ public class StageManager : MonoBehaviour
         {
             ChangeStage(nextStageIdx);
         }
+    }
+
+    private void SaveCurData(int stageIdx)
+    {
+        PlayerStats playerStats = Player.GetComponent<PlayerStats>();
+
+        SaveData saveData = new SaveData
+        {
+            CurrentStageIndex = stageIdx,
+            PlayerHealth = playerStats != null ? playerStats.currentHealth : 1000
+        };
+
+        SaveSystem.WriteSaveData(saveData);
     }
 }

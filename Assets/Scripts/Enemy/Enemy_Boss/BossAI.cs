@@ -6,7 +6,7 @@ public class BossAI : MonoBehaviour
 {
     public int nextMove;
     public Transform WeaponTransform;
-    private Vector2 boxSize = new Vector2(12, 6);
+    private Vector2 boxSize = new Vector2(12, 5);
     public LayerMask targetLayer; // 감지할 레이어
     private MonsterAnimationController animationController;
     private Transform playerTransform;
@@ -48,7 +48,9 @@ public class BossAI : MonoBehaviour
     }
     void DetectPlayer()
     {
-        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(transform.position, boxSize, 0f, targetLayer);
+        Vector3 headPosition = transform.position + Vector3.up * 1.5f;
+
+        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(headPosition, boxSize, 0f, targetLayer);
         foreach (Collider2D collider in hitColliders)
         {
             // 각 콜라이더가 "Enemy" 태그를 가지고 있는지 확인

@@ -10,14 +10,4 @@ public class shop : MonoBehaviour
     public bool equipped;
     public int quantity;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

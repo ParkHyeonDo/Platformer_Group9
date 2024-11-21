@@ -23,6 +23,13 @@ public class UIManager : MonoBehaviour
 
     public void NewGame()
     {
+        SaveData newGameData = new SaveData
+        {
+            CurrentStageIndex = 0,
+            PlayerHealth = 1000
+        };
+
+        SaveSystem.WriteSaveData(newGameData);
         SceneManager.LoadScene("MainScene");
         System.GC.Collect();
 
@@ -30,7 +37,11 @@ public class UIManager : MonoBehaviour
 
     public void LoadGame() 
     {
-    
+        SaveData loadedData = SaveSystem.LoadGame();
+        if (loadedData != null)
+        {
+            SceneManager.LoadScene("MainScene");
+        }
     }
 
     public void Option() 
