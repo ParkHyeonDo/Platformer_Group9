@@ -5,14 +5,16 @@ using UnityEngine.UIElements;
 
 public class EnemyAI : MonoBehaviour
 {
-    Rigidbody2D rb;
-    private Vector2 boxSize = Vector3.right;
+    public int health;
+    public int nextMove;
+    private Vector2 boxSize = new Vector2(5, 3);
     public LayerMask targetLayer; // 감지할 레이어
     private MonsterAnimationController animationController;
-
-
+    private Transform playerTransform;
+    Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
-    public int nextMove;
+    
+
 
     private void Awake()
     {
@@ -25,7 +27,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
-        DetectUnits();
+        DetectPlayer();
     }
     private void FixedUpdate()
     {
@@ -39,19 +41,46 @@ public class EnemyAI : MonoBehaviour
             Turn();
         }
     }
-    void DetectUnits()
+    void DetectPlayer()
     {
         Collider2D[] hitColliders = Physics2D.OverlapBoxAll(transform.position, boxSize, 0f, targetLayer);
-        Debug.DrawRay(transform.position, boxSize,Color.red);
-        Collider2D[] hitcolliders;
-        if(spriteRenderer.flipX == true)
+        foreach (Collider2D collider in hitColliders)
         {
-            hitColliders = Physics2D.OverlapBoxAll(transform.position, boxSize, 0f, targetLayer);
+            // 각 콜라이더가 "Enemy" 태그를 가지고 있는지 확인
+            if (collider.CompareTag("Player"))
+            {
+                // "Player" 태그가 있는 경우 처리 수행
+                Debug.Log("적 감지됨: " + collider.name);
+                // 여기에 추가적인 처리 로직을 작성할 수 있습니다.
+            }
+        }
+    }
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        animationController.TriggerHit();
+
+        if (health <= 0)
+        {
+            Die();
         }
         else
         {
-            hitColliders = Physics2D.OverlapBoxAll(transform.position, -boxSize, 0f, targetLayer);
+            Debug.Log("적이 피해를 입었습니다. 남은 체력: " + health);
         }
+    
+    }
+
+    private void Die()
+    {
+        animationController.SetDead(true);
+        rb.velocity = Vector2.zero; // 죽을 때 움직임 멈추기
+        GetComponent<Collider2D>().enabled = false; // 충돌 비활성화
+        this.enabled = false; // 스크립트 비활성화
+        Debug.Log("적이 사망했습니다.");
+
+        // 2초 후에 GameObject를 제거
+        Destroy(gameObject, 2f);
     }
     private void OnDrawGizmos()
     {
