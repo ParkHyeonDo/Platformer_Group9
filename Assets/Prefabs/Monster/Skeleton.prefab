@@ -122,13 +122,14 @@ GameObject:
   - component: {fileID: 9183882586228916171}
   - component: {fileID: 690257795093548758}
   - component: {fileID: 5443369098433493030}
+  - component: {fileID: 3086070275637747926}
   m_Layer: 9
   m_Name: MainSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6894206637355179473
 Transform:
   m_ObjectHideFlags: 0
@@ -274,8 +275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d9b3035ca1e42245a33ab532871478c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
   nextMove: 0
+  WeaponTransform: {fileID: 4894370831712848966}
   targetLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -306,6 +307,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3086070275637747926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599493332354512225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1980d5ade9768a846898db72e0f9e5b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3797979661323551533
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,6 +330,7 @@ GameObject:
   - component: {fileID: 4894370831712848966}
   - component: {fileID: 1908542065044093100}
   - component: {fileID: 5798538681369403200}
+  - component: {fileID: 2273475688969379578}
   m_Layer: 9
   m_Name: Attack
   m_TagString: Untagged
@@ -423,7 +437,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.38075793, y: 0.052932918}
+  m_Offset: {x: 0.45688492, y: 0.052932918}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -434,5 +448,18 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.70193136, y: 0.43939364}
+  m_Size: {x: 0.5496774, y: 0.43939364}
   m_EdgeRadius: 0
+--- !u!114 &2273475688969379578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3797979661323551533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e15eb1a1be9ad714a920d16e353c2d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 120
