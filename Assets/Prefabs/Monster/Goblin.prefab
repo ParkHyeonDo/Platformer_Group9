@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 5280124126871229209}
   - component: {fileID: 8942984745522999423}
   - component: {fileID: 2797052571547309993}
+  - component: {fileID: 2932967107243968115}
   m_Layer: 10
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5280124126871229209
 Transform:
   m_ObjectHideFlags: 0
@@ -88,6 +89,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21f1e44fb4da0ea43b1acd600548b6d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2932967107243968115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066841293507786074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e15eb1a1be9ad714a920d16e353c2d15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4235333364604501066
@@ -317,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitDisableTime: 0.5
+  gameOverUI: {fileID: 0}
 --- !u!114 &4748942381129479804
 MonoBehaviour:
   m_ObjectHideFlags: 0
