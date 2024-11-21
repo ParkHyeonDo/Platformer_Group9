@@ -10,14 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 5280124126871229209}
   - component: {fileID: 8942984745522999423}
-  - component: {fileID: 8552459249042787473}
+  - component: {fileID: 2797052571547309993}
   m_Layer: 10
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5280124126871229209
 Transform:
   m_ObjectHideFlags: 0
@@ -78,7 +78,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2621618, y: 0.43614906}
   m_EdgeRadius: 0
---- !u!114 &8552459249042787473
+--- !u!114 &2797052571547309993
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,10 +87,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1066841293507786074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e15eb1a1be9ad714a920d16e353c2d15, type: 3}
+  m_Script: {fileID: 11500000, guid: 21f1e44fb4da0ea43b1acd600548b6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 2
 --- !u!1 &4235333364604501066
 GameObject:
   m_ObjectHideFlags: 0
