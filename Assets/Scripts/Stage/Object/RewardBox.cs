@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class RewardBox : MonoBehaviour
+public class RewardBox : MonoBehaviour, IInteractable
 {
     private bool isOpen = false;
 

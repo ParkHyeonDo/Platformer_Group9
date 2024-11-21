@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NextStageDoor : MonoBehaviour
+public class NextStageDoor : MonoBehaviour, IInteractable
 {
     private bool isEnabled = false;
 
