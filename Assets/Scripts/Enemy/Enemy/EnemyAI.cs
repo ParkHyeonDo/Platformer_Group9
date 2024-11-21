@@ -33,17 +33,17 @@ public class EnemyAI : MonoBehaviour
         {
             MoveTowardsPlayer();
         }
-        
     }
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(nextMove, rb.velocity.y);
 
-        Vector2 frontVec = new Vector2(rb.position.x + nextMove*0.5f, rb.position.y);
+        Vector2 frontVec = new Vector2(rb.position.x + nextMove * 0.3f, rb.position.y);
         Debug.DrawRay(frontVec, Vector3.down, new Color(0,1,0));
         RaycastHit2D rayHit = Physics2D.Raycast(rb.position, Vector3.down, 2, LayerMask.GetMask("Ground"));
         if (rayHit.collider == null)
         {
+            Debug.Log("∑π¿Ã∞° ∂•ø° ¥Í¡ˆ æ ¿Ω");
             Turn();
         }
     }

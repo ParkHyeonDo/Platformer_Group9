@@ -30,5 +30,13 @@ public class MonsterAnimationController : MonoBehaviour
     {
         animator.SetTrigger("HitTrigger");
     }
+    public void TiggerCast()
+    {
+        animator.SetTrigger("CastTrigger");
+    }
+    public void SetAttack(bool isAttack)
+    {
+        animator.SetBool("IsAttack", isAttack);
+    }
     
 }
