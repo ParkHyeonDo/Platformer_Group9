@@ -16,8 +16,12 @@ public class CharacterStatHandler : MonoBehaviour
         PlayerCurrentStat = new CharacterStat();
         PlayerCurrentStat.Health = playerBaseStat.Health;
         PlayerCurrentStat.Mana = playerBaseStat.Mana;
+        PlayerCurrentStat.Damage = playerBaseStat.Damage;
         PlayerCurrentStat.Speed = playerBaseStat.Speed;
         PlayerCurrentStat.JumpForce = playerBaseStat.JumpForce;
+
+        PlayerCurrentStat.HaveKnockback = playerBaseStat.HaveKnockback;
+        PlayerCurrentStat.KnockbackForce = playerBaseStat.KnockbackForce;
     }
 }
 
