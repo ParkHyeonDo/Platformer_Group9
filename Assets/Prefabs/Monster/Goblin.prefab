@@ -105,6 +105,8 @@ GameObject:
   - component: {fileID: 6718080907652590388}
   - component: {fileID: 168865117956418048}
   - component: {fileID: 8736226985841821478}
+  - component: {fileID: 3635970151062302066}
+  - component: {fileID: 4748942381129479804}
   m_Layer: 10
   m_Name: Goblin
   m_TagString: Untagged
@@ -302,3 +304,30 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3635970151062302066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4235333364604501066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb8de3b31af7818468c7c68f5754cc05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitDisableTime: 0.5
+--- !u!114 &4748942381129479804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4235333364604501066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532f088221cda1340bdf117140ebac31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterBaseStat: {fileID: 11400000, guid: a831b00262bc289449129e186b20c566, type: 2}
+  CharacterCurrentStat: {fileID: 0}

@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 6602650287277470911}
   - component: {fileID: 5590111600164918938}
   - component: {fileID: 2843180726139478419}
+  - component: {fileID: 4687130445610909168}
+  - component: {fileID: 7863714287824064607}
   m_Layer: 10
   m_Name: Skeleton
   m_TagString: Untagged
@@ -212,6 +214,33 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &4687130445610909168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100339439887225896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532f088221cda1340bdf117140ebac31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterBaseStat: {fileID: 11400000, guid: 7d5064ecc3cdb8248b1156d9deb487b4, type: 2}
+  CharacterCurrentStat: {fileID: 0}
+--- !u!114 &7863714287824064607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100339439887225896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb8de3b31af7818468c7c68f5754cc05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitDisableTime: 0.5
 --- !u!1 &3797979661323551533
 GameObject:
   m_ObjectHideFlags: 0
