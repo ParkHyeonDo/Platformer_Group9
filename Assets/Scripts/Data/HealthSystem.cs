@@ -14,6 +14,7 @@ public class HealthSystem : MonoBehaviour , IDamagable
 
     public event Action HitDisableEnd;
     public event Action Ondamage;
+    public GameObject gameOverUI;
 
     private float maxHealth;
 
@@ -67,6 +68,7 @@ public class HealthSystem : MonoBehaviour , IDamagable
             Debug.Log("플레이어 사망");
             return;
         }
+        gameOverUI.SetActive(true);
         // 몬스터 애니메이션 연결
         Destroy(gameObject);
     }

@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class StageManager : MonoBehaviour
 {
     public Stage[] Stages;
     private StageLoader _stageLoader;
     private int _curStageIdx = 0;
+    public Text stageNum;
 
     public GameObject Player;
     public CameraFollow CameraFollowScript;
@@ -69,6 +71,7 @@ public class StageManager : MonoBehaviour
     public void NextStage()
     {
         int nextStageIdx = _curStageIdx + 1;
+        stageNum.text = (_curStageIdx + 1).ToString();
 
         if (nextStageIdx < Stages.Length)
         {

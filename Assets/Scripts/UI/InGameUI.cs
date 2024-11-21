@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class InGameUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject pauseUI;
+    public void PauseBtn()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Time.timeScale = 0f;
+        pauseUI.SetActive(true);
     }
 }

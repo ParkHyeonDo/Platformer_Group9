@@ -1,22 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PauseUI : MonoBehaviour
 {
     public GameObject pauseUI;
-    public InputAction pauseAction;
 
-    
-    public void OnDestroy()
+    public void ResumeBtn()
     {
-        pauseAction.performed -= OnPause;
+        Time.timeScale = 1f;
+        pauseUI.SetActive(false);
     }
-
-    public void OnPause(InputAction.CallbackContext context)
+    public void Quit()
     {
-        if (context.phase == InputActionPhase.Started)
-            pauseUI.SetActive(!pauseUI.activeSelf);
+        SceneManager.LoadScene("Title");
     }
 }

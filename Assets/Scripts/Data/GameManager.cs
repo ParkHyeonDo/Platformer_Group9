@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     [SerializeField] private string playerTag;
     public Player Player { get; private set; }
-    public GameObject gameOverUI;
+    [SerializeField] private Image hpGause;
 
     private void Awake()
     { 
@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         Player = GameObject.FindGameObjectWithTag(playerTag).GetComponent<Player>();
+    }
+    public void Update()
+    {
+        hpGause.fillAmount = Instance.Player.Stat.CharacterCurrentStat.Health / 1000;
     }
 }
 

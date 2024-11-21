@@ -10,8 +10,6 @@ public class PlayerStats : CharacterStatHandler
     public int currentHealth;
     public int baseattack = 1;
 
-    [SerializeField] private Image hpGause;
-
     public ItemData itemdata;
     public Action addItem;
 
@@ -29,10 +27,6 @@ public class PlayerStats : CharacterStatHandler
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         CharacterCurrentStat.Health = currentHealth;
         Debug.Log($"현재 체력: {currentHealth}/{maxHealth}");
-    }
-    public void Update()
-    {
-        hpGause.fillAmount = currentHealth / 1000;
     }
     public void UseItem(ItemData item)
     {
