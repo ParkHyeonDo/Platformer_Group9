@@ -2,30 +2,30 @@
 
 public class StageLoader : MonoBehaviour
 {
-    private GameObject _curStage;
+    private GameObject curStage;
 
     public GameObject LoadStage(GameObject stagePrefab)
     {
-        if (_curStage != null)
+        if (curStage != null)
         {
             UnloadStage();
         }
 
-        _curStage = Instantiate(stagePrefab, Vector3.zero, Quaternion.identity);
-        return _curStage;
+        curStage = Instantiate(stagePrefab, Vector3.zero, Quaternion.identity);
+        return curStage;
     }
 
     public void UnloadStage()
     {
-        if ( _curStage != null )
+        if ( curStage != null )
         {
-            Destroy( _curStage );
-            _curStage = null;
+            Destroy( curStage );
+            curStage = null;
         }
     }
 
     public GameObject GetCurrentStage()
     {
-        return _curStage;
+        return curStage;
     }
 }

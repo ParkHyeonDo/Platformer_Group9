@@ -5,12 +5,12 @@ using System;
 
 public class Player : MonoBehaviour
 {
-    [HideInInspector]
-    public PlayerController Controller;
-    public PlayerAnimationController PlayerAnim;
-    public PlayerStats Stats;
-    public PlayerInventory Inventory;
-    public CharacterStatHandler Stat;
+
+    [HideInInspector] public PlayerController Controller;
+    [HideInInspector] public PlayerAnimationController PlayerAnim;
+    [HideInInspector] public PlayerStats Stats;
+    [HideInInspector] public PlayerInventory Inventory;
+    [HideInInspector] public CharacterStatHandler Stat;
 
     private void Awake()
     {

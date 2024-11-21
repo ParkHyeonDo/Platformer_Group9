@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 774304061779279004}
   - component: {fileID: 5618747387671490268}
   - component: {fileID: 629165833055822876}
+  - component: {fileID: 8137188686949699003}
+  - component: {fileID: 7522626929375720379}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -214,8 +216,15 @@ MonoBehaviour:
   LadderTopMask:
     serializedVersion: 2
     m_Bits: 256
+  DoorMask:
+    serializedVersion: 2
+    m_Bits: 0
+  BoxMask:
+    serializedVersion: 2
+    m_Bits: 0
+  WeaponPosition: {fileID: 7030075791692766647}
   PlayerCollider: {fileID: 0}
-  WeaponTransform: {fileID: 8352094432433088681}
+  IsAttack: 0
 --- !u!95 &6847744666450460906
 Animator:
   serializedVersion: 5
@@ -351,6 +360,36 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.35, y: 0.7}
   m_Direction: 0
+--- !u!114 &8137188686949699003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768066134152100398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e88b4d3f71c3a9459cc9fc7353e67f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerAnimator: {fileID: 0}
+--- !u!114 &7522626929375720379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768066134152100398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c697205d4257f419e895cb55410767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Controller: {fileID: 0}
+  PlayerAnim: {fileID: 0}
+  Stats: {fileID: 0}
+  Inventory: {fileID: 0}
+  Stat: {fileID: 0}
 --- !u!1 &7030075791692766647
 GameObject:
   m_ObjectHideFlags: 0
