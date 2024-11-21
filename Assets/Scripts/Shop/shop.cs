@@ -10,12 +10,4 @@ public class shop : MonoBehaviour
     public bool equipped;
     public int quantity;
 
-    void Start()
-    {
-        
-    }
-    void Update()
-    {
-        
-    }
 }

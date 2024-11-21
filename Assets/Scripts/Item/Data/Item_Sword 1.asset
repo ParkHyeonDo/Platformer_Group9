@@ -15,6 +15,7 @@ MonoBehaviour:
   itemType: 0
   itemName: Sword+1
   description: Attack+10
+  price: 300
   icon: {fileID: -1041754904, guid: 6eb16e372762d6b4cb708c44ebfab931, type: 3}
   item: {fileID: 3080075662775235059, guid: 3406090148f8a6f4fb9c6bbe7e8a6839, type: 3}
   canStack: 0
