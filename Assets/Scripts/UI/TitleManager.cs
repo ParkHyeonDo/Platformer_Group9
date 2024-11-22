@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class UIManager : MonoBehaviour
+public class TitleManager : MonoBehaviour
 {
     public GameObject NewGameButton;
     public GameObject LoadButton;
-    public GameObject OptionButton;
     public GameObject QuitButton;
 
     private void Start()
@@ -44,10 +43,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void Option() 
-    {
-    
-    }
 
     public void Quit() 
     {
