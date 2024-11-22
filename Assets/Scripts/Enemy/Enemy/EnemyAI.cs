@@ -62,7 +62,6 @@ public class EnemyAI : MonoBehaviour
             {
                 playerTransform = collider.transform; // 플레이어의 트랜스폼 저장
                 isChasingPlayer = true; // 플레이어 추적 시작
-                Debug.Log("플레이어 인지! 추적 시작.");
             }
         }
     }
@@ -105,7 +104,7 @@ public class EnemyAI : MonoBehaviour
     }
     private void Weaponpoint(bool leftVector)
     {
-        if (!leftVector)
+        if (leftVector)
         {
             WeaponTransform.localScale = Vector3.one * weaponScale;
         }
