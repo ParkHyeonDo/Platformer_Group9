@@ -18,4 +18,4 @@ MonoBehaviour:
   Speed: 100
   JumpForce: 0
   HaveKnockback: 1
-  KnockbackForce: 1
+  KnockbackForce: 500

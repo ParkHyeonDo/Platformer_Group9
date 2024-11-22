@@ -17,5 +17,5 @@ MonoBehaviour:
   Damage: 200
   Speed: 300
   JumpForce: 0
-  HaveKnockback: 0
-  KnockbackForce: 0
+  HaveKnockback: 1
+  KnockbackForce: 500
