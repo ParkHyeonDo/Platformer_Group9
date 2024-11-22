@@ -37,14 +37,13 @@ public class ContactAttack : MonoBehaviour
     private void Knockback(Collider2D collision) 
     {
         Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
-        SpriteRenderer spriteRenderer = collision.GetComponent<SpriteRenderer>();
-        if (spriteRenderer.flipX)
+        if (attackRange.transform.localScale.x > 0)
         {
-            rb.AddForce(Vector2.right * characterStat.CharacterCurrentStat.KnockbackForce * 10f, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.right * characterStat.CharacterCurrentStat.KnockbackForce , ForceMode2D.Impulse);
         }
         else 
         {
-            rb.AddForce(Vector2.left * characterStat.CharacterCurrentStat.KnockbackForce * 10f, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.left * characterStat.CharacterCurrentStat.KnockbackForce , ForceMode2D.Impulse);
         }
     }
 
