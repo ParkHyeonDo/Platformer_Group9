@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
-  shopinventory: {fileID: 0}
+  shopinventory: {fileID: 3928042869571898975, guid: d3eca46c3a2253f4baf34245f28f2771, type: 3}
   index: 0
   equipped: 0
   quantity: 0
