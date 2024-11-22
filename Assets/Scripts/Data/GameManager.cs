@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     }
     public void Update()
     {
-        hpGause.fillAmount = Instance.Player.Stat.CharacterCurrentStat.Health / 1000;
+        hpGause.fillAmount = (float)Instance.Player.Stat.CharacterCurrentStat.Health/1000f;
     }
 }
 

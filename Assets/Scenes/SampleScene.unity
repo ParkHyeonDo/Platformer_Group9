@@ -3199,7 +3199,7 @@ MonoBehaviour:
   - StageName: Boss Stage
     Prefab: {fileID: 7654982108582645955, guid: 87b046f402d277d4c8b4f70ef6b0bd45, type: 3}
     StartPosition: {x: -3.5, y: -3.3, z: 0}
-  stageNum: {fileID: 0}
+  stageNum: {fileID: 8000893461723506930}
   Player: {fileID: 4768066133021290352}
   CameraFollowScript: {fileID: 246982728604826603}
   stageProgress: {fileID: 0}

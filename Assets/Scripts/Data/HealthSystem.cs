@@ -66,9 +66,10 @@ public class HealthSystem : MonoBehaviour , IDamagable
         if (this.gameObject.CompareTag(playerTag)) 
         {
             Debug.Log("플레이어 사망");
+            gameOverUI.SetActive(true);
             return;
         }
-        gameOverUI.SetActive(true);
+        
         // 몬스터 애니메이션 연결
         Destroy(gameObject);
     }
