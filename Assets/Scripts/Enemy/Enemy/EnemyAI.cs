@@ -8,6 +8,7 @@ public class EnemyAI : MonoBehaviour
 {
     public int nextMove;
     public Transform WeaponTransform;
+    public Transform SightTransform;
     private Vector2 boxSize = new Vector2(5, 3);
     public LayerMask targetLayer; // 감지할 레이어
     private MonsterAnimationController animationController;
@@ -47,7 +48,6 @@ public class EnemyAI : MonoBehaviour
         RaycastHit2D rayHit = Physics2D.Raycast(rb.position, Vector3.down, 2, LayerMask.GetMask("Ground"));
         if (!rayHit.collider && checkTime > turnTime)
         {
-            Debug.Log("레이가 땅에 닿지 않음");
             Turn();
             checkTime = 0; 
         }
@@ -63,7 +63,6 @@ public class EnemyAI : MonoBehaviour
             {
                 playerTransform = collider.transform; // 플레이어의 트랜스폼 저장
                 isChasingPlayer = true; // 플레이어 추적 시작
-                Debug.Log("플레이어 인지! 추적 시작.");
             }
         }
     }
@@ -74,7 +73,7 @@ public class EnemyAI : MonoBehaviour
         Vector3 direction = (playerTransform.position - transform.position).normalized;
         transform.position += direction * 2 * Time.deltaTime;
         spriteRenderer.flipX = direction.x < 0;
-        Weaponpoint(true);
+        Weaponpoint(spriteRenderer.flipX);
     }
    
     private void OnDrawGizmos()
@@ -92,7 +91,7 @@ public class EnemyAI : MonoBehaviour
         if (nextMove != 0)
         {
             spriteRenderer.flipX = nextMove == -1;
-            Weaponpoint(true);
+            Weaponpoint(spriteRenderer.flipX);
         }   
     }
 
@@ -100,7 +99,7 @@ public class EnemyAI : MonoBehaviour
     {
         nextMove *= -1;
         spriteRenderer.flipX = nextMove == -1;
-        Weaponpoint (true);
+        Weaponpoint(spriteRenderer.flipX);
         CancelInvoke();
         Invoke("Think",3);
     }
@@ -109,10 +108,12 @@ public class EnemyAI : MonoBehaviour
         if (!leftVector)
         {
             WeaponTransform.localScale = Vector3.one * weaponScale;
+            SightTransform.localScale = Vector3.one * weaponScale;
         }
         else
         {
             WeaponTransform.localScale = -Vector3.one * weaponScale;
+            SightTransform.localScale = -Vector3.one * weaponScale;
         }
     }
 }
