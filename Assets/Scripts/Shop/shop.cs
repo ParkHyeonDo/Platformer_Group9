@@ -6,6 +6,7 @@ public class shop : MonoBehaviour , IInteractable
 {
     public ItemData item;
     public GameObject shopinventory;
+    [HideInInspector]public ShopInventory inventory;
     public int index;
     public bool equipped;
     public int quantity;

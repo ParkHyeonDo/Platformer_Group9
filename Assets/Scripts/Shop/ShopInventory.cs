@@ -50,7 +50,7 @@ public class ShopInventory : MonoBehaviour
         {
             slots[i] = slotPanel.GetChild(i).GetComponent<shop>();
             slots[i].index = i;
-            //slots[i].shopInventory = this;
+            slots[i].inventory = this;
         }
         playerInventory = GameManager.Instance.Player.GetComponent<PlayerInventory>();
         UpdateUpgradeButtonStatus();

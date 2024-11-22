@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            rb.velocity = new Vector2(0, rb.velocity.y);
+            rb.velocity = new Vector2(rb.velocity.x , rb.velocity.y);
             GameManager.Instance.Player.PlayerAnim.MoveAnimFinish();
         }
     }
