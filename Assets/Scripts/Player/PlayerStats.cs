@@ -30,10 +30,8 @@ public class PlayerStats : CharacterStatHandler
     }
     public void UseItem(ItemData item)
     {
-        // Consumable 아이템만 사용 가능
         if (item.itemType == ItemType.Consumable)
         {
-            // consumables 배열이 비어 있거나 null인지 확인
             if (item.consumables == null || item.consumables.Length == 0)
             {
                 Debug.LogWarning($"{item.itemName}에는 적용 가능한 소비 효과가 없습니다.");
