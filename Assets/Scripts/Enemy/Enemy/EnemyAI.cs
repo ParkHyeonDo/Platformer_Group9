@@ -16,7 +16,7 @@ public class EnemyAI : MonoBehaviour
     private float weaponScale = 1f;
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
-    private float checkTime = 3;
+    private float checkTime = 0;
     private float turnTime = 2;
 
     private void Awake()
@@ -39,6 +39,7 @@ public class EnemyAI : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        checkTime += Time.deltaTime;
         rb.velocity = new Vector2(nextMove, rb.velocity.y);
 
         Vector2 frontVec = new Vector2(rb.position.x + nextMove * 0.8f, rb.position.y);
