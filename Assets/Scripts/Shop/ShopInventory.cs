@@ -11,6 +11,7 @@ public class ShopInventory : MonoBehaviour
     public GameObject ShopInventoryWindow;
     public Transform slotPanel;
     private PlayerInventory playerInventory;
+    private ShopInventory shopInventory;
 
     public TextMeshProUGUI upgradeStatusText;
     public Button upgradeButton;
@@ -36,7 +37,11 @@ public class ShopInventory : MonoBehaviour
 
     public List<ItemData> shopItems = new List<ItemData>();
 
-    
+    private void Awake()
+    {
+        shopInventory = GetComponent<ShopInventory>();
+    }
+
     void Start()
     {
         ShopInventoryWindow.SetActive(false);
@@ -45,7 +50,7 @@ public class ShopInventory : MonoBehaviour
         {
             slots[i] = slotPanel.GetChild(i).GetComponent<shop>();
             slots[i].index = i;
-            slots[i].shopinventory = this;
+            //slots[i].shopInventory = this;
         }
         playerInventory = GameManager.Instance.Player.GetComponent<PlayerInventory>();
         UpdateUpgradeButtonStatus();

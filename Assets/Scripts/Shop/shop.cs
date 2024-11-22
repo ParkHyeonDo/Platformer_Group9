@@ -5,7 +5,7 @@ using UnityEngine;
 public class shop : MonoBehaviour , IInteractable
 {
     public ItemData item;
-    public ShopInventory shopinventory;
+    public GameObject shopinventory;
     public int index;
     public bool equipped;
     public int quantity;
@@ -13,6 +13,10 @@ public class shop : MonoBehaviour , IInteractable
 
     public void Interact() 
     {
-        shopinventory.gameObject.SetActive(true);
+        if (shopinventory != null)
+        {
+            shopinventory.gameObject.SetActive(true);
+            Debug.Log("shop");
+        }
     }
 }
