@@ -19,13 +19,14 @@ public class ContactAttack : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
         HealthSystem healthSystem = collision.GetComponent<HealthSystem>();
         if (healthSystem != null) 
         {
             bool DamageApply = healthSystem.TakeDamage(+characterStat.CharacterCurrentStat.Damage/*##강화스탯 추가*/);
-
+            
             if (DamageApply && characterStat.CharacterCurrentStat.HaveKnockback) 
             {
                 Knockback(collision);
@@ -39,11 +40,11 @@ public class ContactAttack : MonoBehaviour
         SpriteRenderer spriteRenderer = collision.GetComponent<SpriteRenderer>();
         if (spriteRenderer.flipX)
         {
-            rb.AddForce(Vector2.right * characterStat.CharacterCurrentStat.KnockbackForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.right * characterStat.CharacterCurrentStat.KnockbackForce * 10f, ForceMode2D.Impulse);
         }
         else 
         {
-            rb.AddForce(Vector2.left * characterStat.CharacterCurrentStat.KnockbackForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.left * characterStat.CharacterCurrentStat.KnockbackForce * 10f, ForceMode2D.Impulse);
         }
     }
 
