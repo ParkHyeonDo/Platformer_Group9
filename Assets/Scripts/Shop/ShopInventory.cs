@@ -60,7 +60,6 @@ public class ShopInventory : MonoBehaviour
 
     public void OnUpgradeButtonClick()
     {
-        // 최대 강화 단계에 도달했는지 확인
         if (upgradeLevel >= maxUpgradeLevel)
         {
             upgradeStatusText.text = "최대 강화 단계에 도달했습니다.";
@@ -74,11 +73,9 @@ public class ShopInventory : MonoBehaviour
             return;
         }
 
-        // 소지금 차감
         playerInventory.gold -= upgradeCost;
-
-        // 강화 성공 여부 확인
-        if (Random.value <= successRate) // 성공
+    
+        if (Random.value <= successRate) 
         {
             upgradeLevel++;
             successRate -= 0.1f;
@@ -132,6 +129,15 @@ public class ShopInventory : MonoBehaviour
         playerInventory.AddGold(sellPrice); 
         playerInventory.RemoveItem(selectedItem); 
         Debug.Log($"판매 성공: {selectedItem.itemName}, 판매 금액: {sellPrice}G");
+    }
+
+    public void OnQuitButtonClick()
+    {
+            if (ShopInventoryWindow != null)
+            {
+                ShopInventoryWindow.SetActive(false);
+                Debug.Log("상점 UI가 비활성화되었습니다.");
+            }
     }
 }
 
