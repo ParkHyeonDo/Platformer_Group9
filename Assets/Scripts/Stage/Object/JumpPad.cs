@@ -10,7 +10,7 @@ public class JumpPad : StageObject
 
         if (playerRb != null)
         {
-            playerRb.velocity = new Vector2(playerRb.velocity.x, JumpForce);
+            playerRb.velocity = new  Vector2(playerRb.velocity.x, JumpForce);
         }
     }
 }
